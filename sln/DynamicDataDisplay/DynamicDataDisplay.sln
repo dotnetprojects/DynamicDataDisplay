@@ -214,6 +214,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendSamples", "..\..\src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcSegmentPlotting", "..\..\src\Repros\ArcSegmentPlotting\ArcSegmentPlotting.csproj", "{A40917DA-091B-4BF5-A645-61EA45D8090F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDataDisplay.SL", "..\..\src\DynamicDataDisplay.SL\DynamicDataDisplay.SL.csproj", "{73109F24-1A99-4B56-8EF8-5D7406F981D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -755,6 +757,12 @@ Global
 		{A40917DA-091B-4BF5-A645-61EA45D8090F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A40917DA-091B-4BF5-A645-61EA45D8090F}.ReleaseXBAP|Any CPU.ActiveCfg = Release|Any CPU
 		{A40917DA-091B-4BF5-A645-61EA45D8090F}.ReleaseXBAP|Any CPU.Build.0 = Release|Any CPU
+		{73109F24-1A99-4B56-8EF8-5D7406F981D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73109F24-1A99-4B56-8EF8-5D7406F981D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73109F24-1A99-4B56-8EF8-5D7406F981D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73109F24-1A99-4B56-8EF8-5D7406F981D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73109F24-1A99-4B56-8EF8-5D7406F981D6}.ReleaseXBAP|Any CPU.ActiveCfg = Release|Any CPU
+		{73109F24-1A99-4B56-8EF8-5D7406F981D6}.ReleaseXBAP|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
