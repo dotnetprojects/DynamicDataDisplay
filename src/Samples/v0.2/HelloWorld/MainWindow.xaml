@@ -1,0 +1,15 @@
+﻿<Window x:Class="Simplest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"    
+    Title="Simplest plot sample" Height="243" Width="416">
+
+    <d3:ChartPlotter Name="plotter">
+        <d3:Header TextBlock.FontSize="20">
+            Very simple chart
+        </d3:Header>
+
+        <d3:VerticalAxisTitle>Sine value</d3:VerticalAxisTitle>
+        <d3:HorizontalAxisTitle>Sine argument</d3:HorizontalAxisTitle>
+    </d3:ChartPlotter>
+</Window>

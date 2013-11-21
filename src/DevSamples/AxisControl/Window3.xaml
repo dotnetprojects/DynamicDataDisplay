@@ -1,0 +1,10 @@
+﻿<Window x:Class="AxisControlSample.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:c="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    Title="Window3" Height="300" Width="300">
+	<Grid>
+		<c:TimeChartPlotter Name="plotter"/>
+		<!--<c:HorizontalDateTimeAxis Name="axis"/>-->
+	</Grid>
+</Window>

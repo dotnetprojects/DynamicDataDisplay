@@ -1,0 +1,70 @@
+﻿<Window x:Class="PointSetOnMap.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    Title="DynamicDataDisplay Sample App" WindowState="Maximized">
+	<Grid>
+		<Grid.Resources>
+			<Style TargetType="{x:Type TextBlock}">
+				<Setter Property="Margin" Value="0,0,10,0"/>
+			</Style>
+
+			<Style TargetType="{x:Type Slider}">
+				<Setter Property="TickPlacement" Value="BottomRight"/>
+				<Setter Property="AutoToolTipPlacement" Value="BottomRight"/>
+			</Style>
+
+			<Style TargetType="{x:Type DockPanel}">
+				<Setter Property="Margin" Value="3,5,3,5"/>
+			</Style>
+		</Grid.Resources>
+
+		<d3:ChartPlotter Name="plotter">
+			<d3:Map Name="map">
+				<d3:VEImageryRoadServer ApplicationId="943fd0414ead4ff2b6f9e8254e21235d"/>
+			</d3:Map>
+
+			<d3:MarkerPointsGraph Name="graph" IsHitTestVisible="False">
+				<d3:MarkerPointsGraph.Marker>
+					<d3:CirclePointMarker Size="20"/>
+				</d3:MarkerPointsGraph.Marker>
+			</d3:MarkerPointsGraph>
+
+			<d3:CursorCoordinateGraph/>
+
+			<Grid Width="300" Canvas.Bottom="10" Canvas.Right="10">
+				<Rectangle Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="3" RadiusX="5" RadiusY="5" Fill="#A9FFFFFF" Stroke="LightGray"/>
+			
+				<Grid Margin="5">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+
+					<TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2">Data Type:</TextBlock>
+					<ComboBox Grid.Row="0" Grid.Column="1" Name="dataTypeCombobox" SelectionChanged="dataTypeCombobox_SelectionChanged" Margin="1"/>
+
+					<TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2">Text Hue:</TextBlock>
+					<Slider Minimum="0" Maximum="360" Grid.Row="1" Grid.Column="1" Value="180"
+					ValueChanged="Slider_ValueChanged" Name="hueSlider"/>
+
+					<TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2">Attenuation:</TextBlock>
+					<Slider Minimum="0" Maximum="4" Value="2.3" Grid.Row="2" Grid.Column="1"
+						ValueChanged="Slider_ValueChanged" Name="attSlider"/>
+				</Grid>
+			</Grid>
+			
+			<TextBlock Canvas.Bottom="10" Canvas.Left="10">
+				Data from <Hyperlink FontFamily="Consolas" FontSize="14" NavigateUri="http://www.nass.usda.gov" Click="Hyperlink_Click">http://www.nass.usda.gov</Hyperlink>
+			</TextBlock>
+
+		</d3:ChartPlotter>
+	</Grid>
+</Window>

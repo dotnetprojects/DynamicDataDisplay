@@ -1,0 +1,7 @@
+﻿<Window x:Class="Polar.PolarWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Polar Window" Height="300" Width="300">
+    <Grid Name="grid">
+    </Grid>
+</Window>

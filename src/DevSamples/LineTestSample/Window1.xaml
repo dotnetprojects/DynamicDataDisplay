@@ -1,0 +1,39 @@
+﻿<Window x:Class="LineTestSample.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:l="clr-namespace:LineTestSample"
+        Title="DynamicDataDisplay Sample" WindowState="Maximized"
+        Icon="{x:Static d3:D3IconHelper.DynamicDataDisplayWhiteIcon}" Width="640" Height="426">
+    <Grid>
+        <DockPanel>
+            <Button DockPanel.Dock="Top" Content="Add data source" Name="addDataSourceBtn" Click="addDataSourceBtn_Click"/>
+            <d3:ChartPlotter Name="plotter" Margin="0,5,0,0">
+                <d3:LineGraph Name="lineGraph" Stroke="OrangeRed" StrokeThickness="1"/>
+
+                <d3:VerticalLine Value="{Binding ElementName=dataFollowChart, Path=MarkerPosition.X}" StrokeThickness="2" Stroke="Violet" StrokeDashArray="4,5"/>
+                <d3:HorizontalLine Value="{Binding ElementName=dataFollowChart, Path=MarkerPosition.Y}" StrokeThickness="2" Stroke="Violet" StrokeDashArray="4,5"/>
+                
+                <d3:ViewportPanel>
+                    <Rectangle Width="35" Height="35" Fill="Yellow" Stroke="Orange"
+                               d3:ViewportPanel.X="{Binding ElementName=dataFollowChart, Path=MarkerPosition.X}"
+                               d3:ViewportPanel.Y="{Binding ElementName=dataFollowChart, Path=MarkerPosition.Y}"/>
+                </d3:ViewportPanel>
+                
+                <d3:DataFollowChart Name="dataFollowChart" PointSource="{Binding ElementName=lineGraph}">
+                    <DataTemplate>
+                        <Grid d3:ViewportPanel.ScreenOffsetY="16">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle RadiusX="3" RadiusY="3" Stroke="LightGray" Fill="#99FFFFFF" Grid.Row="0" Grid.RowSpan="2"/>
+                            <Ellipse Width="10" Height="10" Fill="LightGreen" Stroke="Green" Grid.Row="0"/>
+                            <TextBlock Name="tb" Margin="2,15,2,0" Grid.Row="1"><TextBlock Text="{Binding Position.X, StringFormat=G3}"/>;<TextBlock Text="{Binding Position.Y, StringFormat=G3}"/></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </d3:DataFollowChart>
+            </d3:ChartPlotter>
+        </DockPanel>
+    </Grid>
+</Window>

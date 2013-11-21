@@ -1,0 +1,248 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:DynamicDataDisplay.Markers"
+	xmlns:local2="clr-namespace:Microsoft.Research.DynamicDataDisplay.Charts.Markers"
+	xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	xmlns:selectors="clr-namespace:Microsoft.Research.DynamicDataDisplay.Charts.Selectors">
+	
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/DynamicDataDisplay.Markers;component/PieChart files/PieChartResources.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<!--Bar Chart Style-->
+	<Style TargetType="{x:Type local:BarChart}" BasedOn="{StaticResource {x:Type ContentControl}}">
+		<Style.Resources>
+			<Style TargetType="local:TemplateMarkerGenerator">
+				<Setter Property="MarkerTemplate">
+					<Setter.Value>
+						<DataTemplate>
+							<Rectangle Fill="Aqua" Width="10"
+								   d3:ViewportPanel.Y="0" 
+								   d3:ViewportPanel.ViewportHeight="{Binding YMin}"
+								   d3:ViewportPanel.ViewportVerticalAlignment="Bottom"/>
+						</DataTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Style.Resources>
+	</Style>
+
+	<Style TargetType="{x:Type local:VectorFieldChartItem}">
+		<Style.Resources>
+			<local:VectorToBoundsMultiConverter x:Key="boundsConverter"/>
+		</Style.Resources>
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type local:VectorFieldChartItem}">
+					<Line X1="{Binding Path=StartPoint.X, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+						  Y1="{Binding Path=StartPoint.Y, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+						  X2="{Binding Path=EndPoint.X, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+						  Y2="{Binding Path=EndPoint.Y, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+						  Stroke="{TemplateBinding Stroke}" Stretch="Fill"
+						  StrokeEndLineCap="Triangle"
+						  />
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="d3:ViewportPanel.ViewportBounds">
+			<Setter.Value>
+				<MultiBinding Converter="{StaticResource boundsConverter}">
+					<d3:SelfBinding Path="StartPoint"/>
+					<d3:SelfBinding Path="Direction"/>
+				</MultiBinding>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!--<Style TargetType="{x:Type local:VectorFieldChart}">
+		<Setter Property="MarkerBuilderTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<local:TemplateMarkerGenerator>
+						<DataTemplate>
+						</DataTemplate>
+					</local:TemplateMarkerGenerator>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Resources>
+			
+			<Style TargetType="{x:Type local:TemplateMarkerGenerator}">
+				<Setter Property="MarkerTemplate">
+					<Setter.Value>
+						<DataTemplate>
+							<d3:TransparentUIProxyContainer>
+							</d3:TransparentUIProxyContainer>
+						</DataTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Style.Resources>
+	</Style>-->
+
+	<Style TargetType="{x:Type local:StockItem}" x:Key="candleStickStyle">
+		<Style.Resources>
+			<Style TargetType="{x:Type Shape}" x:Key="shapeStyle">
+				<Setter Property="Stroke" Value="Black"/>
+				<Setter Property="StrokeThickness" Value="1.0"/>
+				<Setter Property="HorizontalAlignment" Value="Center"/>
+				<Setter Property="VerticalAlignment" Value="Stretch"/>
+				<Setter Property="Stretch" Value="Fill"/>
+			</Style>
+
+			<Style TargetType="{x:Type Line}" x:Key="lineStyle" BasedOn="{StaticResource shapeStyle}">
+				<Setter Property="X1" Value="0"/>
+				<Setter Property="X2" Value="0"/>
+				<Setter Property="Y1" Value="0"/>
+				<Setter Property="Y2" Value="1"/>
+			</Style>
+
+			<Style TargetType="{x:Type Rectangle}" x:Key="rectStyle" BasedOn="{StaticResource shapeStyle}">
+				<Setter Property="HorizontalAlignment" Value="Stretch"/>
+				<Setter Property="RadiusX" Value="1"/>
+				<Setter Property="RadiusY" Value="1"/>
+			</Style>
+		</Style.Resources>
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Grid>
+						<Grid.Resources>
+							<local:StockFillConverter PositiveFill="White" NegativeFill="Black" x:Key="fillConverter"/>
+						</Grid.Resources>
+
+						<Grid.RowDefinitions>
+							<RowDefinition Name="topRow" Height="*"/>
+							<RowDefinition Name="centralRow" Height="*"/>
+							<RowDefinition Name="bottomRow" Height="*"/>
+						</Grid.RowDefinitions>
+
+						<Line Name="topLine" Grid.Row="0" Style="{StaticResource lineStyle}"/>
+						<Rectangle Name="centralRect" Grid.Row="1" Style="{StaticResource rectStyle}">
+							<Rectangle.Fill>
+								<MultiBinding Converter="{StaticResource fillConverter}">
+									<Binding Path="Open"/>
+									<Binding Path="Close"/>
+								</MultiBinding>
+							</Rectangle.Fill>
+						</Rectangle>
+						<Line Name="bottomLine" Grid.Row="2" Style="{StaticResource lineStyle}"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type local:StockItem}">
+		<Style.Resources>
+			<local:StockGridColumnConverter x:Key="columnConverter"/>
+			<local:StockFillConverter PositiveFill="Green" NegativeFill="Red" x:Key="fillConverter"/>
+
+			<Style TargetType="Line" x:Key="allLineStyle">
+				<Setter Property="Stroke">
+					<Setter.Value>
+						<MultiBinding Converter="{StaticResource fillConverter}">
+							<Binding Path="Open"/>
+							<Binding Path="Close"/>
+						</MultiBinding>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="StrokeThickness" Value="2.0"/>
+			</Style>
+
+			<Style TargetType="{x:Type Line}" x:Key="horizontalStyle" BasedOn="{StaticResource allLineStyle}">
+				<Setter Property="HorizontalAlignment" Value="Stretch"/>
+				<Setter Property="VerticalAlignment" Value="Center"/>
+				<Setter Property="Stretch" Value="Fill"/>
+				<Setter Property="X1" Value="0"/>
+				<Setter Property="X2" Value="1"/>
+				<Setter Property="Y1" Value="0"/>
+				<Setter Property="Y2" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="2"/>
+			</Style>
+
+			<Style TargetType="{x:Type Line}" x:Key="verticalStyle" BasedOn="{StaticResource allLineStyle}">
+				<Setter Property="HorizontalAlignment" Value="Center"/>
+				<Setter Property="VerticalAlignment" Value="Stretch"/>
+				<Setter Property="Stretch" Value="Fill"/>
+				<Setter Property="X1" Value="0"/>
+				<Setter Property="X2" Value="0"/>
+				<Setter Property="Y1" Value="0"/>
+				<Setter Property="Y2" Value="1"/>
+			</Style>
+
+
+			<Style TargetType="{x:Type Line}" BasedOn="{StaticResource horizontalStyle}" x:Key="topSideLineStyle">
+				<Setter Property="Grid.Column">
+					<Setter.Value>
+						<MultiBinding Converter="{StaticResource columnConverter}" ConverterParameter="top">
+							<Binding Path="Open"/>
+							<Binding Path="Close"/>
+						</MultiBinding>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style TargetType="{x:Type Line}" BasedOn="{StaticResource horizontalStyle}" x:Key="bottomSideLineStyle">
+				<Setter Property="Grid.Column">
+					<Setter.Value>
+						<MultiBinding Converter="{StaticResource columnConverter}" ConverterParameter="bottom">
+							<Binding Path="Open"/>
+							<Binding Path="Close"/>
+						</MultiBinding>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+		</Style.Resources>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Name="topRow" Height="*"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Name="centralRow" Height="*"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Name="bottomRow" Height="*"/>
+						</Grid.RowDefinitions>
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Line Name="line" Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Style="{StaticResource verticalStyle}"/>
+						<Line Name="topSideLine" Grid.Row="1" Style="{StaticResource topSideLineStyle}"/>
+						<Line Name="bottomSideLine" Grid.Row="3" Style="{StaticResource bottomSideLineStyle}"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!-- ColumnChart -->
+	<Binding x:Key="columnChartIndexBinding" Path="(d3:PointChartBase.Index)" RelativeSource="{RelativeSource Self}"/>
+	<!-- end of ColumnChart-->
+	
+	<!--PointSelector-->
+	<Style TargetType="{x:Type selectors:PointSelector}">
+		<Setter Property="Panel.ZIndex" Value="1"/>
+	</Style>
+	
+	<!--RectangleSelector-->
+	<Style TargetType="{x:Type selectors:RectangleSelector}">
+		<Setter Property="RectangleTemplate">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle Stroke="DarkGray" StrokeThickness="2" Fill="Transparent"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

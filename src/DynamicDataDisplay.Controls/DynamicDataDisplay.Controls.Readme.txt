@@ -1,0 +1,11 @@
+﻿This assembly contains a set of controls built using WPF DynamicDataDisplay primitives.
+
+Contains:
+- PaletteControl for showing palette and values corresponding to different palette colors;
+- Three type of ValueSelectors - controls for precice selecting of specific value:
+	* IntegerSelector - for selecting System.Int32 values;
+	* NumericSelector - for selecting System.Double values;
+	* DateTimeSelector - for selecting System.DateTime values.
+	
+	
+WPF DynamicDataDisplay HomePage is http://dynamicdatadisplay.codeplex.com

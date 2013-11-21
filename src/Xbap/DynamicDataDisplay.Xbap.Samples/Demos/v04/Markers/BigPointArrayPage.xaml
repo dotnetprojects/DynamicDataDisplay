@@ -1,0 +1,39 @@
+﻿<Page x:Class="NewMarkersSample.Pages.BigPointArrayPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    Title="Point[1.000.000]" Loaded="Page_Loaded">
+	<Grid>
+		<Grid.Resources>
+			<d3:BrushHSBConverter LightnessDelta="0.2" x:Key="fillConverter"/>
+		</Grid.Resources>
+		
+		<d3:ChartPlotter Name="plotter">
+			<d3:DevMarkerChart Name="markerChart" IndependentValuePath="X" DependentValuePath="Y" 
+							   d3:NewLegend.Description="1.000.000 of filtered points">
+				<d3:NewLegend.VisualContent>
+					<Ellipse Width="20" Height="20" Stroke="DarkGray">
+						<Ellipse.Fill>
+							<LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+								<GradientStop Color="Red" Offset="0.05"/>
+								<GradientStop Color="Orange" Offset="0.20"/>
+								<GradientStop Color="Yellow" Offset="0.35"/>
+								<GradientStop Color="LightGreen" Offset="0.5"/>
+								<GradientStop Color="Cyan" Offset="0.65"/>
+								<GradientStop Color="Blue" Offset="0.80"/>
+								<GradientStop Color="Violet" Offset="0.95"/>
+							</LinearGradientBrush>
+						</Ellipse.Fill>
+					</Ellipse>
+				</d3:NewLegend.VisualContent>
+				<d3:DevMarkerChart.MarkerBuilder>
+					<d3:TemplateMarkerGenerator>
+						<DataTemplate>
+							<Ellipse Width="10" Height="10"/>
+						</DataTemplate>
+					</d3:TemplateMarkerGenerator>
+				</d3:DevMarkerChart.MarkerBuilder>
+			</d3:DevMarkerChart>
+		</d3:ChartPlotter>
+	</Grid>
+</Page>

@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Microsoft.Research.DynamicDataDisplay.Controls.PaletteControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    xmlns:local="clr-namespace:Microsoft.Research.DynamicDataDisplay.Controls"
+    >
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="converter"/>
+    </UserControl.Resources>
+    
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<Image Name="image" Stretch="Fill" Grid.Row="0" MinHeight="20" Height="{Binding Path=PaletteHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PaletteControl}}}"/>
+		<d3:NumericAxisControl Name="axis" Grid.Row="1" Visibility="{Binding Path=ShowAxis, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PaletteControl}}, Converter={StaticResource converter}}"/>
+		
+	</Grid>
+</UserControl>

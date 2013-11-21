@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:l="clr-namespace:Microsoft.Research.DynamicDataDisplay.Charts">
+
+	<Style TargetType="{x:Type Shape}" x:Key="linesPathStyle">
+		<Setter Property="Fill" Value="{x:Null}"/>
+		<Setter Property="Stroke" Value="{Binding l:RangeHighlight.Stroke}"/>
+		<Setter Property="StrokeDashArray" Value="{Binding l:RangeHighlight.StrokeDashArray}"/>
+		<Setter Property="StrokeDashCap" Value="{Binding l:RangeHighlight.StrokeDashCap}"/>
+		<Setter Property="StrokeDashOffset" Value="{Binding l:RangeHighlight.StrokeDashOffset}"/>
+		<Setter Property="StrokeEndLineCap" Value="{Binding l:RangeHighlight.StrokeEndLineCap}"/>
+		<Setter Property="StrokeLineJoin" Value="{Binding l:RangeHighlight.StrokeLineJoin}"/>
+		<Setter Property="StrokeMiterLimit" Value="{Binding l:RangeHighlight.StrokeMiterLimit}"/>
+		<Setter Property="StrokeStartLineCap" Value="{Binding l:RangeHighlight.StrokeStartLineCap}"/>
+		<Setter Property="StrokeThickness" Value="{Binding l:RangeHighlight.StrokeThickness}"/>
+	</Style>
+
+	<Style TargetType="{x:Type l:RangeHighlight}">
+		<Setter Property="Stroke" Value="DarkBlue"/>
+		<Setter Property="StrokeThickness" Value="1"/>
+		<Setter Property="Opacity" Value="0.3"/>
+		<Setter Property="Fill" Value="Blue"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type l:RangeHighlight}">
+					<Grid>
+						<Path Name="PART_RectPath"
+									Fill="{TemplateBinding Fill}"/>
+						<Path Name="PART_LinesPath"
+									Fill="{x:Null}"
+									Stroke="{TemplateBinding Stroke}"
+									StrokeDashArray="{TemplateBinding StrokeDashArray}"
+									StrokeDashCap="{TemplateBinding StrokeDashCap}"
+									StrokeDashOffset="{TemplateBinding StrokeDashOffset}"
+									StrokeEndLineCap="{TemplateBinding StrokeEndLineCap}"
+									StrokeLineJoin="{TemplateBinding StrokeLineJoin}"
+									StrokeMiterLimit="{TemplateBinding StrokeMiterLimit}"
+									StrokeStartLineCap="{TemplateBinding StrokeStartLineCap}"
+									StrokeThickness="{TemplateBinding StrokeThickness}"
+									/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

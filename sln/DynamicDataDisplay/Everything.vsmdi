@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestList name="Lists of Tests" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <RunConfiguration id="2f1e3e38-84e2-45ef-92d7-6b3fcc0d4932" name="Local Test Run" storage="localtestrun.testrunconfig" type="Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestList>
+  <TestList name="Plotter tests" id="dc13c5d0-3da8-4057-8808-337fc66c32c1" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <TestLinks>
+      <TestLink id="57bb9849-0c4d-9097-59d9-08f06d7578ec" name="HorizontalAxisTest" storage="dynamicdatadisplaytest\bin\debug\dynamicdatadisplay.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="d2e26547-e30f-0da8-2ce2-0dc4038fa14a" name="VerticalAxisTest" storage="dynamicdatadisplaytest\bin\debug\dynamicdatadisplay.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="08509bf1-1604-0bee-d2c5-32f2eb881efe" name="VerticalAxisIsDefaultTest" storage="dynamicdatadisplaytest\bin\debug\dynamicdatadisplay.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="37586312-5040-6110-8d25-be8d7229e1af" name="TestChildrenAddRemove" storage="dynamicdatadisplaytest\bin\debug\dynamicdatadisplay.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="03a03611-ba13-de21-1a72-b9b1184ad450" name="HorizontalAxisIsDefaultTest" storage="dynamicdatadisplaytest\bin\debug\dynamicdatadisplay.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    </TestLinks>
+  </TestList>
+</TestLists>

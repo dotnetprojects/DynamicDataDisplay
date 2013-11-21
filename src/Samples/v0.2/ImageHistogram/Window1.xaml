@@ -1,0 +1,29 @@
+﻿<Window x:Class="ImageHistogramSample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="http://research.microsoft.com/DynamicDataDisplay/1.0"
+
+    Title="Histogram of image" WindowState="Maximized">
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="Open image..." Click="OnOpenImageClick"/>
+			<Separator/>
+			<CheckBox Name="check" Content="Use log mapping" Checked="CheckBox_Checked" 
+								Unchecked="CheckBox_Checked" IsChecked="False"/>
+		</Menu>
+		<Grid DockPanel.Dock="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+			</Grid.ColumnDefinitions>
+
+			<Image Name="image" Grid.Column="0"/>
+			
+			<c:ChartPlotter Name="plotter" Grid.Column="1">
+				<c:Header Content="Histogram of image" FontSize="20" FontFamily="Georgia"  c:Plotter.IsDefaultElement="True"/>
+				<c:HorizontalAxisTitle Content="Color [0..255]" FontFamily="Georgia" c:Plotter.IsDefaultElement="True"/>
+				<c:VerticalAxisTitle Content="Distribution of pixels' color" FontFamily="Georgia" c:Plotter.IsDefaultElement="True"/>
+			</c:ChartPlotter>
+		</Grid>
+	</DockPanel>
+</Window>

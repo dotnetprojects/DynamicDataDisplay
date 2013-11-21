@@ -1,0 +1,9 @@
+﻿<Page x:Class="Microsoft.Research.DynamicDataDisplay.Samples.Demos.v04.Markers.NewMarkersSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="NewMarkersSample" Loaded="Page_Loaded">
+	<TabControl Name="tabControl" SelectedIndex="0">
+		
+	</TabControl>
+</Page>
+	

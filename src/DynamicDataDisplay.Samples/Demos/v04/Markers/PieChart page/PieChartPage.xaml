@@ -1,0 +1,96 @@
+﻿<Page x:Class="NewMarkersSample.Pages.PieChartPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+	  xmlns:wpf="http://schemas.microsoft.com/wpf/2008/toolkit"
+	  Title="Pie Chart" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+	<Grid Name="root">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<d3:ChartPlotter Grid.Row="0" Name="plotter">
+			<d3:ViewportUIContainer>
+				<d3:PieChart Name="chart" Width="500" Height="500" 
+							 IndependentValuePath="Income" DependentValuePath="CityName" ItemsSource="{Binding}" 
+							 Canvas.Left="10" Canvas.Top="10"
+							 StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
+					<d3:PieChart.Resources>
+						<d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
+						<d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+					</d3:PieChart.Resources>
+
+					<d3:PieChart.MarkerTemplate>
+						<DataTemplate>
+							<d3:PieChartItem>
+								<d3:LiveToolTipService.ToolTip>
+									<d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+											RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}"
+											RenderTransformOrigin="0,0">
+										<TextBlock>
+											<Bold>City:</Bold> <TextBlock Text="{Binding CityName}"/>
+											<LineBreak/>
+											<Bold>Income:</Bold> $<TextBlock Text="{Binding Income}"/>
+										</TextBlock>
+									</d3:LiveToolTip>
+								</d3:LiveToolTipService.ToolTip>
+							</d3:PieChartItem>
+						</DataTemplate>
+					</d3:PieChart.MarkerTemplate>
+				</d3:PieChart>
+			</d3:ViewportUIContainer>
+
+			<RepeatButton Content="Add random item" Canvas.Right="160" Canvas.Bottom="10" Click="addRandomItemBtn_Click"/>
+
+			<GroupBox Header="Legend style" Canvas.Right="270" Canvas.Bottom="10">
+				<StackPanel Background="White">
+					<RadioButton Content="Default style" Name="defaultStyle" IsChecked="True" Checked="defaultStyle_Checked"/>
+					<RadioButton Content="No scroll style" Name="noScrollStyle" Checked="noScrollStyle_Checked"/>
+				</StackPanel>
+			</GroupBox>
+		</d3:ChartPlotter>
+
+		<!--<d3:PieChart Name="chart2" IndependentValuePath="Income" Grid.Row="0" Visibility="Hidden">
+			<d3:PieChart.Resources>
+				<d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
+				<d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+			</d3:PieChart.Resources>
+
+			<d3:PieChart.MarkerTemplate>
+				<DataTemplate>
+					<d3:PieChartItem Style="{x:Static d3:PieChartStyles.Donut}">
+						<d3:LiveTooltipService.ToolTip>
+							<d3:LiveTooltip Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+											RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}"
+											RenderTransformOrigin="0,0">
+								<TextBlock>
+									<Bold>City:</Bold> <TextBlock Text="{Binding CityName}"/>
+									<LineBreak/>
+									<Bold>Income:</Bold> $<TextBlock Text="{Binding Income}"/>
+								</TextBlock>
+							</d3:LiveTooltip>
+						</d3:LiveTooltipService.ToolTip>
+					</d3:PieChartItem>
+				</DataTemplate>
+			</d3:PieChart.MarkerTemplate>
+		</d3:PieChart>-->
+
+		<ScrollViewer Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalScrollBarVisibility="Visible">
+			<wpf:DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" 
+					  CanUserDeleteRows="True">
+				<wpf:DataGrid.Columns>
+					<wpf:DataGridTextColumn Header="City" Binding="{Binding CityName}"/>
+					<wpf:DataGridTextColumn Header="Income" Binding="{Binding Income, StringFormat=F2}"/>
+				</wpf:DataGrid.Columns>
+			</wpf:DataGrid>
+		</ScrollViewer>
+
+		<Slider Minimum="0" Maximum="360" Name="startAngleSlider" Grid.Row="1" Grid.Column="0" Margin="5"/>
+	</Grid>
+</Page>

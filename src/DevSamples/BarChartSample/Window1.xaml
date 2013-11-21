@@ -1,0 +1,34 @@
+﻿<Window x:Class="BarChartSample.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        Title="DynamicDataDisplay Sample" WindowState="Maximized"
+        Icon="{x:Static d3:D3IconHelper.DynamicDataDisplayWhiteIcon}">
+    <Grid>
+        <d3:ChartPlotter Name="plotter">
+            <d3:ChartPlotter.Resources>
+                <d3:BarFromValueConverter x:Key="converter" PositiveBrush="Green" NegativeBrush="Red"/>
+            </d3:ChartPlotter.Resources>
+            
+            <d3:HorizontalLine Value="0"/>
+            
+            <d3:OldBarChart Name="barChart">
+                <d3:OldBarChart.MarkerGenerator>
+                    <d3:TemplateMarkerGenerator2>
+                        <DataTemplate>
+                            <Rectangle Stroke="BlanchedAlmond" StrokeThickness="0" StrokeLineJoin="Round"
+                                       d3:ViewportPanel.X="{Binding X}"
+                                       d3:ViewportPanel.Y="0"
+                                       d3:ViewportPanel.ViewportVerticalAlignment="{Binding Value, Converter={StaticResource converter}}"
+                                       d3:ViewportPanel.ViewportHeight="{Binding Value, Converter={StaticResource converter}}"
+                                       d3:ViewportPanel.ViewportWidth="0.095"
+                                       Fill="{Binding Value, Converter={StaticResource converter}}"
+                                       ToolTip="{Binding Value}" ToolTipService.InitialShowDelay="0"
+                                       />
+                        </DataTemplate>
+                    </d3:TemplateMarkerGenerator2>
+                </d3:OldBarChart.MarkerGenerator>
+            </d3:OldBarChart>
+        </d3:ChartPlotter>
+    </Grid>
+</Window>

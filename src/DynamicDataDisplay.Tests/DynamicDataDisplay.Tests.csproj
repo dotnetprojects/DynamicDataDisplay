@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA2C1BAD-34E3-4EEB-80AF-CBE49BCBA48B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DynamicDataDisplay.Tests</RootNamespace>
+    <AssemblyName>DynamicDataDisplay.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DynamicDataDisplay.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseXBAP|AnyCPU' ">
+    <OutputPath>bin\ReleaseXBAP\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\PropertySetSystem.cs" />
+    <Compile Include="D3\AdjustablePointSelectorTest.cs" />
+    <Compile Include="D3\AssertExtensions.cs" />
+    <Compile Include="D3\AxisTest.cs" />
+    <Compile Include="D3\ChildrenTest.cs" />
+    <Compile Include="D3\D3CollectionTest.cs" />
+    <Compile Include="D3\DataRectExtensionsTest.cs" />
+    <Compile Include="D3\DataRectTest.cs" />
+    <Compile Include="D3\DegreeTest.cs" />
+    <Compile Include="D3\FrequencyFilterTest.cs" />
+    <Compile Include="D3\GenericPlotterTest.cs" />
+    <Compile Include="D3\Markers\DataSourceFactoriesTest.cs" />
+    <Compile Include="D3\Markers\DevMarkerChartTest.cs" />
+    <Compile Include="D3\PointSelectorTest.cs" />
+    <Compile Include="D3\RingArrayTest.cs" />
+    <Compile Include="D3\SplitEnumeratorTest.cs" />
+    <Compile Include="D3\ViewportShapeTest.cs" />
+    <Compile Include="D3\PlotterXamlSerializationTest.cs" />
+    <Compile Include="D3\ReflectionExtensions.cs" />
+    <Compile Include="D3\VEServerBaseTest.cs" />
+    <Compile Include="D3\ViewportRestrictionsTest.cs" />
+    <Compile Include="D3\ViewportTest.cs" />
+    <Compile Include="Maps\NetworkTileServerTest.cs" />
+    <Compile Include="Maps\RenderTileProviderTest.cs" />
+    <Compile Include="Maps\TileIndexTest.cs" />
+    <Compile Include="PaletteControl\PaletteControlTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maps\ReadonlyTileCacheTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicDataDisplay.Controls\DynamicDataDisplay.Controls.csproj">
+      <Project>{8AEE9DA5-83F5-401F-8C58-9BAC660A0E6E}</Project>
+      <Name>DynamicDataDisplay.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicDataDisplay.Maps\DynamicDataDisplay.Maps.csproj">
+      <Project>{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}</Project>
+      <Name>DynamicDataDisplay.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicDataDisplay.Markers\DynamicDataDisplay.Markers.csproj">
+      <Project>{A5EB794C-7C62-4A0C-A441-ACF7D4074C5D}</Project>
+      <Name>DynamicDataDisplay.Markers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicDataDisplay\DynamicDataDisplay.csproj">
+      <Project>{ECD37682-DF7E-409F-912D-0965634556B5}</Project>
+      <Name>DynamicDataDisplay</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicDataDisplay.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

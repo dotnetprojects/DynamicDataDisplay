@@ -1,0 +1,18 @@
+﻿<Window x:Class="SimpleTooltip.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    Title="Simple tooltips" Height="300" Width="300">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Button Content="Show/Hide markers" Click="Button_Click" Grid.Row="0"
+						Width="110" Height="30" HorizontalAlignment="Left"/>
+
+		<d:ChartPlotter Name="plotter" Grid.Row="1">
+		</d:ChartPlotter>
+	</Grid>
+</Window>

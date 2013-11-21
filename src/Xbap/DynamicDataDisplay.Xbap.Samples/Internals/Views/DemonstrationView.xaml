@@ -1,0 +1,6 @@
+﻿<UserControl x:Class="Microsoft.Research.DynamicDataDisplay.Samples.Internals.Views.DemonstrationView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 >
+	<Frame Source="{Binding}" NavigationUIVisibility="Hidden"/>
+</UserControl>

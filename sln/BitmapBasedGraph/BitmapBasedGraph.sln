@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDataDisplay", "..\..\src\DynamicDataDisplay\DynamicDataDisplay.csproj", "{ECD37682-DF7E-409F-912D-0965634556B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitmapBasedGraphSample", "..\..\src\DevSamples\BitmapBasedGraphSample\BitmapBasedGraphSample.csproj", "{DA84FAB1-E9E8-4DFB-9806-626104DD4804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETopoHeightMapSample", "..\..\src\DevSamples\ETopoHeightMapSample\ETopoHeightMapSample.csproj", "{57E50627-0D72-4297-8918-8419446D71D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDataDisplay.Maps", "..\..\src\DynamicDataDisplay.Maps\DynamicDataDisplay.Maps.csproj", "{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDataDisplay.Maps.Extra", "..\..\src\DynamicDataDisplay.Maps.Extra\DynamicDataDisplay.Maps.Extra.csproj", "{2097E056-FF28-4C99-9B75-07EA8F3B982B}"
+EndProject
+Global
+	 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 	 
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseXBAP|Any CPU = ReleaseXBAP|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.ReleaseXBAP|Any CPU.ActiveCfg = ReleaseXBAP|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.ReleaseXBAP|Any CPU.Build.0 = ReleaseXBAP|Any CPU
+		{DA84FAB1-E9E8-4DFB-9806-626104DD4804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA84FAB1-E9E8-4DFB-9806-626104DD4804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA84FAB1-E9E8-4DFB-9806-626104DD4804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA84FAB1-E9E8-4DFB-9806-626104DD4804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA84FAB1-E9E8-4DFB-9806-626104DD4804}.ReleaseXBAP|Any CPU.ActiveCfg = Release|Any CPU
+		{DA84FAB1-E9E8-4DFB-9806-626104DD4804}.ReleaseXBAP|Any CPU.Build.0 = Release|Any CPU
+		{57E50627-0D72-4297-8918-8419446D71D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E50627-0D72-4297-8918-8419446D71D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E50627-0D72-4297-8918-8419446D71D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E50627-0D72-4297-8918-8419446D71D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E50627-0D72-4297-8918-8419446D71D8}.ReleaseXBAP|Any CPU.ActiveCfg = Release|Any CPU
+		{57E50627-0D72-4297-8918-8419446D71D8}.ReleaseXBAP|Any CPU.Build.0 = Release|Any CPU
+		{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}.ReleaseXBAP|Any CPU.ActiveCfg = ReleaseXBAP|Any CPU
+		{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}.ReleaseXBAP|Any CPU.Build.0 = ReleaseXBAP|Any CPU
+		{2097E056-FF28-4C99-9B75-07EA8F3B982B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2097E056-FF28-4C99-9B75-07EA8F3B982B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2097E056-FF28-4C99-9B75-07EA8F3B982B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2097E056-FF28-4C99-9B75-07EA8F3B982B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2097E056-FF28-4C99-9B75-07EA8F3B982B}.ReleaseXBAP|Any CPU.ActiveCfg = ReleaseXBAP|Any CPU
+		{2097E056-FF28-4C99-9B75-07EA8F3B982B}.ReleaseXBAP|Any CPU.Build.0 = ReleaseXBAP|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

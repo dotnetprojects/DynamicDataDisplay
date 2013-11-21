@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5EB794C-7C62-4A0C-A441-ACF7D4074C5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Research.DynamicDataDisplay.Markers</RootNamespace>
+    <AssemblyName>DynamicDataDisplay.Markers</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DynamicDataDisplay.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseXBAP|AnyCPU' ">
+    <OutputPath>bin\ReleaseXBAP\</OutputPath>
+    <DefineConstants>TRACE;RELEASEXBAP</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Threading, Version=1.0.3058.34407, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\System.Threading\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcceptableRange\AcceptableRangeChart.cs" />
+    <Compile Include="AcceptableRange\AcceptableRangeMultiConverter.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="BarChart files\BarChart.cs" />
+    <Compile Include="CandleStickChart.cs" />
+    <Compile Include="ColumnChart.cs" />
+    <Compile Include="DataSources\Composite\CompositeDataSource.cs" />
+    <Compile Include="DataSources\Composite\CompositeDataSourcePropertyDescriptor.cs" />
+    <Compile Include="DataSources\Composite\CompositeEnumerable.cs" />
+    <Compile Include="DataSources\Composite\CompositeEnumerator.cs" />
+    <Compile Include="DataSources\Composite\DataSourcePartCollection.cs" />
+    <Compile Include="DataSources\Composite\DynamicItem.cs" />
+    <Compile Include="DataSources\DataSource2DPiece.cs" />
+    <Compile Include="DataSources\DataSourceEnvironment.cs" />
+    <Compile Include="DataSources\DataSourceFactories\DataSourceDataSourceFactory.cs" />
+    <Compile Include="DataSources\DataSourceFactories\DataSourceFactory.cs" />
+    <Compile Include="DataSources\DataSourceFactories\DataSourceFactoryStore.cs" />
+    <Compile Include="DataSources\DataSourceFactories\GenericIEnumerableFactory.cs" />
+    <Compile Include="DataSources\DataSourceFactories\GenericIListFactory.cs" />
+    <Compile Include="DataSources\DataSourceFactories\GenericIDataSource2DFactory.cs" />
+    <Compile Include="DataSources\DataSourceFactories\IEnumerablePointFactory.cs" />
+    <Compile Include="DataSources\DataSourceFactories\PointArrayFactory.cs" />
+    <Compile Include="DataSources\Composite\DataSourcePart.cs" />
+    <Compile Include="DataSources\DataSourceFactories\XmlElementFactory.cs" />
+    <Compile Include="DataSources\EnumerableDataSource.cs" />
+    <Compile Include="DataSources\EnumerablePointDataSource.cs" />
+    <Compile Include="DataSources\GenericIEnumerableDataSource.cs" />
+    <Compile Include="DataSources\GenericIListDataSource.cs" />
+    <Compile Include="DataSources\GenericPointSource2D.cs" />
+    <Compile Include="DataSources\IDataSourceEnvironment.cs" />
+    <Compile Include="DataSources\IEnumerableHelper.cs" />
+    <Compile Include="DataSources\PointArrayDataSource.cs" />
+    <Compile Include="DataSources\ValueConvertersFactories\CharValueConverterFactory.cs" />
+    <Compile Include="DataSources\ValueConvertersFactories\DateTimeValueConverterFactory.cs" />
+    <Compile Include="DataSources\ValueConvertersFactories\IValueConversionContext.cs" />
+    <Compile Include="DataSources\ValueConvertersFactories\ValueConversionContext.cs" />
+    <Compile Include="DataSources\ValueConvertersFactories\ValueConverterFactoriesStore.cs" />
+    <Compile Include="DataSources\ValueConvertersFactories\ValueConverterFactory.cs" />
+    <Compile Include="DataSources\ValueConverters\Converter.cs" />
+    <Compile Include="DataSources\ValueConverters\DateTimeValueConverter.cs" />
+    <Compile Include="DataSources\ValueConverters\LambdaConverter.cs" />
+    <Compile Include="DataSources\ValueConverters\GenericLambdaConverter.cs" />
+    <Compile Include="DataSources\ValueConverters\LambdaMultiConverter.cs" />
+    <Compile Include="DataSources\XmlElementDataSource.cs" />
+    <Compile Include="DevMarkerChart.Updaters.cs" />
+    <Compile Include="Filters\GroupFilter.cs" />
+    <Compile Include="Filters\ParallelClusteringFilter.cs" />
+    <Compile Include="ForestDisplay\ForestBoundsConverter.cs" />
+    <Compile Include="ForestDisplay\ForestDisplayControl.xaml.cs">
+      <DependentUpon>ForestDisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForestDisplay\ForestItem.cs" />
+    <Compile Include="ForestDisplay\TreeSpeciesInfo.cs" />
+    <Compile Include="ForestDisplay\TreeViews.cs" />
+    <Compile Include="MarkerChartLegendItemFactory.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\CrossMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\DiamondMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\DownTriangleMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\EllipseMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\PathMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\PlusMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\RectangleMarker.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\UpTriangleMarker.cs" />
+    <Compile Include="ForestDisplay\ForestDisplayGenerator.xaml.cs">
+      <DependentUpon>ForestDisplayGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarkerGenerators\Rendering\EllipseRenderer.cs" />
+    <Compile Include="MarkerGenerators\Rendering\MarkerRenderer.cs" />
+    <Compile Include="MarkerGenerators\Rendering\RenderingMarkerGenerator.cs" />
+    <Compile Include="MarkerGenerators\TemplateSelectorMarkerGenerator.cs" />
+    <Compile Include="PieChart files\PieChartLegendItem.cs" />
+    <Compile Include="PieChart files\PieChartLegendItemFactory.cs" />
+    <Compile Include="PieChart files\PieChartLegendItemManager.cs" />
+    <Compile Include="PieChart files\PieLegendItemTooltipConverter.cs" />
+    <Compile Include="RenderingChart.cs" />
+    <Compile Include="RenderingChartCanvas.cs" />
+    <Compile Include="Selectors\Point\AddPointHandler.cs" />
+    <Compile Include="Selectors\Point\AdjustablePointSelector.cs" />
+    <Compile Include="Selectors\LambdaCommand.cs" />
+    <Compile Include="Selectors\MouseClickService.cs" />
+    <Compile Include="Selectors\Point\MultipleSelectHandler.cs" />
+    <Compile Include="Selectors\Point\NoneModeHandler.cs" />
+    <Compile Include="Selectors\Point\PointSelector.xaml.cs">
+      <DependentUpon>PointSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\Point\PointSelectorCommands.cs" />
+    <Compile Include="Selectors\Point\PointSelectorMode.cs" />
+    <Compile Include="Selectors\Point\PointSelectorModeHandler.cs" />
+    <Compile Include="Selectors\Point\RemovePointHandler.cs" />
+    <Compile Include="Selectors\Point\SelectorObservableCollection.cs" />
+    <Compile Include="Selectors\Point\SinglePointSelector.cs" />
+    <Compile Include="Selectors\Rectangle\ClickAndDragHandler.cs" />
+    <Compile Include="Selectors\Rectangle\NoneHandler.cs" />
+    <Compile Include="Selectors\Rectangle\RectangleSelector.xaml.cs">
+      <DependentUpon>RectangleSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\Rectangle\RectangleSelectorMode.cs" />
+    <Compile Include="Selectors\Rectangle\RectangleSelectorModeHandler.cs" />
+    <Compile Include="Selectors\Rectangle\TwoClicksHandler.cs" />
+    <Compile Include="Selectors\SelectorModeHandler.cs" />
+    <Compile Include="DataSources\Old\CompositeDataSource.cs" />
+    <Compile Include="DataSources\DataSource.cs" />
+    <Compile Include="DataSources\Old\EnumerableDataSource.cs" />
+    <Compile Include="Filters\BoundsFilter.cs" />
+    <Compile Include="Filters\FilterCollection.cs" />
+    <Compile Include="Filters\FrequencyScreenXFilter.cs" />
+    <Compile Include="Filters\InclinationFilter.cs" />
+    <Compile Include="Filters\InclinationFilter2.cs" />
+    <Compile Include="Filters\PointsFilter2d.cs" />
+    <Compile Include="Filters\ParallelUnitingPointGroupFilter.cs" />
+    <Compile Include="Filters\UnitingPointGroupFilter.cs" />
+    <Compile Include="Functional\ConstantDataSource.cs" />
+    <Compile Include="Functional\FunctionalDataSource.cs" />
+    <Compile Include="Functional\FunctionalDataSourceBase.cs" />
+    <Compile Include="DataSources\PointDataSourceBase.cs" />
+    <Compile Include="HorizontalColumnChart.cs" />
+    <Compile Include="LineChart.cs" />
+    <Compile Include="LineChartExtensions.cs" />
+    <Compile Include="Experimental\LinePart.cs" />
+    <Compile Include="Experimental\LineSplitter.cs" />
+    <Compile Include="DevMarkerChart.cs" />
+    <Compile Include="MarkerGenerators\CandleStickGenerator.xaml.cs">
+      <DependentUpon>CandleStickGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarkerGenerators\SimpleForestDisplayGenerator.xaml.cs">
+      <DependentUpon>SimpleForestDisplayGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForestDisplay\ForestFillConverter.cs" />
+    <Compile Include="ForestDisplay\ForestConverter.cs" />
+    <Compile Include="MarkerGenerators\MarkerGenerator.cs" />
+    <Compile Include="MarkerGenerators\BuiltinMarkers\ShapeMarker.cs" />
+    <Compile Include="MarkerGenerators\TemplateMarkerGenerator.cs" />
+    <Compile Include="PieChart files\AngleRadiusToPointConverter.cs" />
+    <Compile Include="PieChart files\AngleToArcEndPointConverter.cs" />
+    <Compile Include="PieChart files\AngleToIsLargeArcConverter.cs" />
+    <Compile Include="PieChart files\DonutPointConverter.cs" />
+    <Compile Include="PieChart files\NegativeRotateTransformConverter.cs" />
+    <Compile Include="PieChart files\PieChart.cs" />
+    <Compile Include="PieChart files\PieChartItem.cs" />
+    <Compile Include="PieChart files\PieChartStyles.cs" />
+    <Compile Include="PieChart files\PiePanel.cs" />
+    <Compile Include="PointChartBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DataSources\Old\RawPointDataSource.cs" />
+    <Content Include="Samples\Sample1.cs" />
+    <Compile Include="Samples\DataMapping.cs" />
+    <Content Include="Samples\Dictionary1.xaml.cs">
+      <DependentUpon>Dictionary1.xaml</DependentUpon>
+    </Content>
+    <Compile Include="DataSources\Old\TableDataSource.cs" />
+    <Compile Include="StockChart files\StockFillConverter.cs" />
+    <Compile Include="StockChart files\StockHeightConverter.cs" />
+    <Compile Include="StockChart files\StockGridColumnConverter.cs" />
+    <Compile Include="StockChart files\StockItem.xaml.cs">
+      <DependentUpon>StockItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StockChart files\StockItemStyles.cs" />
+    <Compile Include="MarkerChartLegendItem.cs" />
+    <Compile Include="Strings\UIResources.ru-ru.Designer.cs">
+      <DependentUpon>UIResources.ru-ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Strings\UIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VectorField\VectorFieldChart.cs" />
+    <Compile Include="VectorField\VectorFieldChartItem.cs" />
+    <Compile Include="VectorField\VectorFieldItemGenerator.cs" />
+    <Compile Include="VectorField\VectorToBoundsMultiConverter.cs" />
+    <Compile Include="ViewportMarginPanel.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings\UIResources.ru-ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.ru-ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings\UIResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DynamicDataDisplay.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ForestDisplay\ForestDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MarkerGenerators\CandleStickGenerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ForestDisplay\ForestDisplayGenerator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MarkerGenerators\SimpleForestDisplayGenerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selectors\Point\PointSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selectors\Rectangle\RectangleSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StockChart files\StockItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PieChart files\PieChartResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicDataDisplay\DynamicDataDisplay.csproj">
+      <Project>{ECD37682-DF7E-409F-912D-0965634556B5}</Project>
+      <Name>DynamicDataDisplay</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

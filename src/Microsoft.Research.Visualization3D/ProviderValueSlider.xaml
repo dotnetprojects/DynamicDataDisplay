@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Microsoft.Research.Visualization3D.ValueSlider"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <GroupBox Name="header">
+        <StackPanel>
+            <TextBlock Text="Min = " Name="minTB"/>
+            <TextBlock Text="Min = " Name="maxTB"/>
+            <Slider Name="rcSlider"/>
+            <TextBlock Name="rcTB" Text="Value = " HorizontalAlignment="Center"/>
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left" Text="Enable Slider"/>
+                <CheckBox DockPanel.Dock="Right" Click="CheckBox_Checked" HorizontalAlignment="Center" VerticalAlignment="Center" Name="rcChBox"/>
+            </DockPanel>
+        </StackPanel>
+    </GroupBox>
+
+</UserControl>

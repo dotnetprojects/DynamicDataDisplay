@@ -1,0 +1,13 @@
+﻿<Page x:Class="NewMarkersSample.Pages.ConditionalBindingPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+	  Title="ConditionalBinding" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid>
+		<d3:ChartPlotter Name="plotter" Visible="-1.3,-3.5 3.5,3.5">
+			<d3:DevMarkerChart Name="chart" LegendDescription="Animated chart">
+				<d3:EllipseMarker/>
+			</d3:DevMarkerChart>
+		</d3:ChartPlotter>
+    </Grid>
+</Page>

@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECD37682-DF7E-409F-912D-0965634556B5}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Research.DynamicDataDisplay</RootNamespace>
+    <AssemblyName>DynamicDataDisplay</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DynamicDataDisplay.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <OutputPath>bin\Debug\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\DynamicDataDisplay.XML</DocumentationFile>
+    <OutputPath>bin\Release\</OutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DebugSymbols>true</DebugSymbols>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseXBAP|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ReleaseXBAP\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS, RELEASEXBAP</DefineConstants>
+    <DocumentationFile>bin\Release\DynamicDataDisplay.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Threading, Version=1.0.3058.34407, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\System.Threading\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Charts\Axes\AxisControlBase.cs" />
+    <Compile Include="Charts\Axes\AxisGrid.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeToDoubleConversion.cs" />
+    <Compile Include="Charts\Axes\DateTime\Strategies\ExtendedDaysStrategy.cs" />
+    <Compile Include="Charts\Axes\DateTime\Strategies\IDateTimeTicksStrategy.cs" />
+    <Compile Include="Charts\Axes\DateTime\Strategies\DelegateStrategy.cs" />
+    <Compile Include="Charts\Axes\DateTime\TimePeriodTicksProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\Strategies\DefaultDateTimeTicksStrategy.cs" />
+    <Compile Include="Charts\Axes\DateTime\DifferenceIn.cs" />
+    <Compile Include="Charts\Axes\DateTime\MinorTimeProviderBase.cs" />
+    <Compile Include="Charts\Axes\DefaultAxisConversions.cs" />
+    <Compile Include="Charts\Axes\GeneralAxis.cs" />
+    <Compile Include="Charts\Axes\GenericLabelProvider.cs" />
+    <Compile Include="Charts\Axes\GenericLocational\GenericLocationalLabelProvider.cs" />
+    <Compile Include="Charts\Axes\GenericLocational\GenericLocationalTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Integer\CollectionLabelProvider.cs" />
+    <Compile Include="Charts\Axes\Integer\HorizontalIntegerAxis.cs" />
+    <Compile Include="Charts\Axes\Integer\IntegerAxis.cs" />
+    <Compile Include="Charts\Axes\Integer\IntegerAxisControl.cs" />
+    <Compile Include="Charts\Axes\Integer\IntegerTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Integer\VerticalIntegerAxis.cs" />
+    <Compile Include="Charts\Axes\ITypedAxis.cs" />
+    <Compile Include="Charts\Axes\IValueConversion.cs" />
+    <Compile Include="Charts\Axes\LabelProvider.cs" />
+    <Compile Include="Charts\Axes\LabelProviderBase.cs" />
+    <Compile Include="Charts\Axes\LabelProviderProperties.cs" />
+    <Compile Include="Charts\Axes\Numeric\CustomBaseNumericLabelProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\CustomBaseNumericTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\LogarithmNumericTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericConversion.cs" />
+    <Compile Include="Charts\Axes\Numeric\UnroundingLabelProvider.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\HorizontalTimeSpanAxis.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\MinorTimeSpanProvider.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeSpanAxis.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeSpanAxisControl.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeSpanLabelProvider.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeSpanTicksProvider.cs" />
+    <Compile Include="Charts\BitmapBasedGraph.cs" />
+    <Compile Include="Charts\DataFollowChart.cs" />
+    <Compile Include="Charts\DataSource2dContext.cs" />
+    <Compile Include="Charts\DebugMenu.cs" />
+    <Compile Include="Charts\Filters\EmptyFilter.cs" />
+    <Compile Include="Charts\Filters\FrequencyFilter2.cs" />
+    <Compile Include="Charts\Isolines\AdditionalLinesRenderer.cs" />
+    <Compile Include="Charts\Isolines\FastIsolineDisplay.xaml.cs">
+      <DependentUpon>FastIsolineDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\Isolines\FastIsolineRenderer.cs" />
+    <Compile Include="Charts\Isolines\IsolineRenderer.cs" />
+    <Compile Include="Charts\Legend items\LegendItemsHelper.cs" />
+    <Compile Include="Charts\Legend items\LegendStyles.cs" />
+    <Compile Include="Charts\Legend items\NewLegendItem.cs" />
+    <Compile Include="Charts\Legend items\LegendBottomButtonIsEnabledConverter.cs" />
+    <Compile Include="Charts\Legend items\LegendTopButtonToIsEnabledConverter.cs" />
+    <Compile Include="Charts\LiveToolTips\LiveToolTip.cs" />
+    <Compile Include="Charts\LiveToolTips\LiveToolTipAdorner.cs" />
+    <Compile Include="Charts\LiveToolTips\LiveToolTipService.cs" />
+    <Compile Include="Charts\NaiveColorMap.cs" />
+    <Compile Include="Charts\Navigation\AxisNavigation.cs" />
+    <Compile Include="Charts\Markers\BarChart.cs" />
+    <Compile Include="Charts\Markers\BarFromValueConverter.cs" />
+    <Compile Include="Charts\Markers\BindMarkerInfo.cs" />
+    <Compile Include="Charts\Markers\MarkerChart.cs" />
+    <Compile Include="Charts\Markers\OldMarkerGenerator.cs" />
+    <Compile Include="Charts\Markers\TemplateMarkerGenerator2.cs" />
+    <Compile Include="Charts\Navigation\HorizontalScrollBar.cs" />
+    <Compile Include="Charts\Navigation\IPlotterContextMenuSource.cs" />
+    <Compile Include="Charts\Navigation\LongOperationsIndicator.cs" />
+    <Compile Include="Charts\Navigation\PlotterScrollBar.cs" />
+    <Compile Include="ChartPlotter.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeSpanTicksProviderBase.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeSpanToDoubleConversion.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\TimeTicksProviderBase.cs" />
+    <Compile Include="Charts\Axes\TimeSpan\VerticalTimeSpanAxis.cs" />
+    <Compile Include="Charts\ContentGraph.cs" />
+    <Compile Include="Charts\FilterCollection.cs" />
+    <Compile Include="Charts\Filters\IPointsFilter.cs" />
+    <Compile Include="Charts\Filters\PointsFilterBase.cs" />
+    <Compile Include="Charts\IOneDimensionalChart.cs" />
+    <Compile Include="Charts\Isolines\CellInfo.cs" />
+    <Compile Include="Charts\Isolines\Enums.cs" />
+    <Compile Include="Charts\Isolines\IsolineBuilder.cs" />
+    <Compile Include="Charts\Isolines\IsolineCollection.cs" />
+    <Compile Include="Charts\Isolines\IsolineGenerationException.cs" />
+    <Compile Include="Charts\Isolines\IsolineGraph.cs" />
+    <Compile Include="Charts\Isolines\IsolineGraphBase.cs" />
+    <Compile Include="Charts\Isolines\IsolineTextAnnotater.cs" />
+    <Compile Include="Charts\Isolines\IsolineTrackingGraph.xaml.cs">
+      <DependentUpon>IsolineTrackingGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\Isolines\Quad.cs" />
+    <Compile Include="Charts\Navigation\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\Navigation\AxisCursorGraph.cs" />
+    <Compile Include="Charts\Navigation\OldAxisNavigation.cs" />
+    <Compile Include="Charts\Navigation\EndlessRectAnimation.cs" />
+    <Compile Include="Charts\Navigation\InertialMouseNavigation.cs" />
+    <Compile Include="Charts\Navigation\PhysicalNavigation.cs" />
+    <Compile Include="Charts\Navigation\PhysicalRectAnimation.cs" />
+    <Compile Include="Charts\Navigation\SimpleNavigationBar.xaml.cs">
+      <DependentUpon>SimpleNavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\Navigation\CursorCoordinateGraph.xaml.cs">
+      <DependentUpon>CursorCoordinateGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\Navigation\VerticalScrollBar.cs" />
+    <Compile Include="Charts\Legend items\NewLegend.cs" />
+    <Compile Include="Charts\PopupTip.cs" />
+    <Compile Include="Charts\Shapes\Arrow.cs" />
+    <Compile Include="Charts\BackgroundRenderer.cs" />
+    <Compile Include="Charts\Shapes\DraggablePoint.xaml.cs">
+      <DependentUpon>DraggablePoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\Shapes\HorizontalLine.cs" />
+    <Compile Include="Charts\Navigation\MouseNavigationBase.cs" />
+    <Compile Include="Charts\Axes\AxisControl.cs" />
+    <Compile Include="Charts\Axes\AxisPlacement.cs" />
+    <Compile Include="Charts\Axes\DateTime\HorizontalDateTimeAxis.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeAxis.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeAxisControl.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeLabelProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeLabelProviderBase.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeTicksProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeTicksProviderBase.cs" />
+    <Compile Include="Charts\Axes\DateTime\MajorDateTimeLabelProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\VerticalDateTimeAxis.cs" />
+    <Compile Include="Charts\Axes\DefaultTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\HorizontalAxis.cs" />
+    <Compile Include="Charts\Axes\Numeric\VerticalAxis.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericAxis.cs" />
+    <Compile Include="Charts\Axes\Numeric\MinorNumericTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericAxisControl.cs" />
+    <Compile Include="Charts\Axes\Numeric\ExponentialLabelProvider.cs" />
+    <Compile Include="Charts\Axes\ITicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericLabelProviderBase.cs" />
+    <Compile Include="Charts\Axes\AxisBase.cs" />
+    <Compile Include="Charts\Shapes\PolylineEditor.cs" />
+    <Compile Include="Charts\Shapes\TemplateableDraggablePoint.cs" />
+    <Compile Include="Charts\Shapes\ViewportPolyBezierCurve.cs" />
+    <Compile Include="Charts\Shapes\ViewportPolygon.cs" />
+    <Compile Include="Charts\Shapes\ViewportPolyline.cs" />
+    <Compile Include="Charts\Shapes\ViewportPolylineBase.cs" />
+    <Compile Include="Charts\ViewportHostPanel.cs" />
+    <Compile Include="Charts\ViewportPanel.cs" />
+    <Compile Include="Charts\ViewportPanel.Properties.cs" />
+    <Compile Include="Charts\ViewportUIContainer.cs" />
+    <Compile Include="Common\Auxiliary\BindingHelper.cs" />
+    <Compile Include="Common\Auxiliary\ColorExtensions.cs" />
+    <Compile Include="Common\Auxiliary\DataSearch\GenericSearcher1d.cs" />
+    <Compile Include="Common\Auxiliary\DataSearch\SearchResult1d.cs" />
+    <Compile Include="Common\Auxiliary\DataSearch\SortedXSearcher1d.cs" />
+    <Compile Include="Common\Auxiliary\DependencyObjectExtensions.cs" />
+    <Compile Include="Common\Auxiliary\MarkupExtensions\XbapConditionalExpression.cs" />
+    <Compile Include="Common\Auxiliary\MarkupExtensions\TemplateBinding.cs" />
+    <Compile Include="Common\Auxiliary\MenuItemExtensions.cs" />
+    <Compile Include="Common\Auxiliary\ObservableCollectionHelper.cs" />
+    <Compile Include="Common\Auxiliary\PlotterChildrenCollectionExtensions.cs" />
+    <Compile Include="Common\Auxiliary\RandomExtensions.cs" />
+    <Compile Include="Common\Auxiliary\MarkupExtensions\SelfBinding.cs" />
+    <Compile Include="Common\Auxiliary\SizeExtensions.cs" />
+    <Compile Include="Common\Auxiliary\StreamExtensions.cs" />
+    <Compile Include="Common\Auxiliary\StringExtensions.cs" />
+    <Compile Include="Common\Auxiliary\DisposableTimer.cs" />
+    <Compile Include="Common\Auxiliary\DataRectExtensions.cs" />
+    <Compile Include="Common\Auxiliary\MarkupExtensions\ResourceExtension.cs" />
+    <Compile Include="Common\Auxiliary\IEnumerableExtensions.cs" />
+    <Compile Include="Common\Auxiliary\ResourcePoolExtensions.cs" />
+    <Compile Include="Common\Auxiliary\TaskExtensions.cs" />
+    <Compile Include="Common\Auxiliary\TriangleMath.cs" />
+    <Compile Include="Common\Auxiliary\ValueStore.cs" />
+    <Compile Include="Common\Auxiliary\ValueStoreConverter.cs" />
+    <Compile Include="Common\BezierBuilder.cs" />
+    <Compile Include="Common\ObservableCollectionWrapper.cs" />
+    <Compile Include="Common\Palettes\LinearPalette.cs" />
+    <Compile Include="Common\Palettes\LinearPalettes.cs" />
+    <Compile Include="Common\Palettes\DecoratorPaletteBase.cs" />
+    <Compile Include="Common\Palettes\MinMaxLoggingPalette.cs" />
+    <Compile Include="Common\Palettes\TransparentLimitsPalette.cs" />
+    <Compile Include="Common\PlotterEventHelper.cs" />
+    <Compile Include="Common\DataRectConverter.cs" />
+    <Compile Include="Common\DataRectSerializer.cs" />
+    <Compile Include="Common\IndividualArrangePanel.cs" />
+    <Compile Include="Common\PlotterAutomationPeer.cs" />
+    <Compile Include="Common\PlotterChangedEventHandler.cs" />
+    <Compile Include="Common\PlotterEvents.cs" />
+    <Compile Include="Common\PlotterPanel.cs" />
+    <Compile Include="Common\RangeConverter.cs" />
+    <Compile Include="Common\ResourcePool.cs" />
+    <Compile Include="Common\SkipPropertyCheckAttribute.cs" />
+    <Compile Include="Common\TokenizerHelper.cs" />
+    <Compile Include="Common\UIChildrenCollection.cs" />
+    <Compile Include="Common\UndoSystem\CollectionAddAction.cs" />
+    <Compile Include="Common\UndoSystem\CollectionRemoveAction.cs" />
+    <Compile Include="Common\UndoSystem\LambdaUndoAction.cs" />
+    <Compile Include="Common\ValueChangedEventArgs.cs" />
+    <Compile Include="Common\WeakReference.cs" />
+    <Compile Include="Common\WidthSpring.cs" />
+    <Compile Include="Converters\BackgroundToForegroundConverter.cs" />
+    <Compile Include="Converters\BrushHSBConverter.cs" />
+    <Compile Include="Converters\FourValuesMultiConverter.cs" />
+    <Compile Include="Converters\GenericValueConverter.cs" />
+    <Compile Include="Converters\ThreeValuesMultiConverter.cs" />
+    <Compile Include="Converters\TwoValuesMultiConverter.cs" />
+    <Compile Include="DataSources\MultiDimensional\DataSource2DHelper.cs" />
+    <Compile Include="DataSources\MultiDimensional\INonUniformDataSource2D.cs" />
+    <Compile Include="DataSources\MultiDimensional\NonUniformDataSource2D.cs" />
+    <Compile Include="GenericChartPlotter.cs" />
+    <Compile Include="InjectedPlotter.cs" />
+    <Compile Include="InjectedPlotterVerticalSyncConverter.cs" />
+    <Compile Include="PlotterLoadMode.cs" />
+    <Compile Include="PointMarkers\RectElementPointMarker.cs" />
+    <Compile Include="Resources\D3IconHelper.cs" />
+    <Compile Include="Common\Auxiliary\DispatcherExtensions.cs" />
+    <Compile Include="Common\Auxiliary\DoubleCollectionHelper.cs" />
+    <Compile Include="Common\Auxiliary\EventExtensions.cs" />
+    <Compile Include="Common\Auxiliary\IPlotterElementExtensions.cs" />
+    <Compile Include="Common\Auxiliary\PlacementExtensions.cs" />
+    <Compile Include="Common\Auxiliary\PlotterExtensions.cs" />
+    <Compile Include="Common\Auxiliary\RangeExtensions.cs" />
+    <Compile Include="Common\Auxiliary\SizeHelper.cs" />
+    <Compile Include="Common\Auxiliary\VectorExtensions.cs" />
+    <Compile Include="Common\Auxiliary\VisualTreeHelperHelper.cs" />
+    <Compile Include="Common\D3Collection.cs" />
+    <Compile Include="Common\NotifyingPanels\INotifyingPanel.cs" />
+    <Compile Include="Common\NotifyingPanels\NotifyingCanvas.cs" />
+    <Compile Include="Common\NotifyingPanels\NotifyingGrid.cs" />
+    <Compile Include="Common\NotifyingPanels\NotifyingStackPanel.cs" />
+    <Compile Include="Common\NotifyingPanels\NotifyingUIElementCollection.cs" />
+    <Compile Include="Common\NotNullAttribute.cs" />
+    <Compile Include="Common\Palettes\DelegatePalette.cs" />
+    <Compile Include="Common\Palettes\UniformLinearPalettes.cs" />
+    <Compile Include="Common\Palettes\PaletteBase.cs" />
+    <Compile Include="Common\Range.cs" />
+    <Compile Include="Charts\Axes\RoundingHelper.cs" />
+    <Compile Include="Charts\Axes\StackCanvas.cs" />
+    <Compile Include="Charts\Axes\Numeric\ToStringLabelProvider.cs" />
+    <Compile Include="Charts\Filters\FrequencyFilter.cs" />
+    <Compile Include="Charts\Filters\InclinationFilter.cs" />
+    <Compile Include="Charts\Navigation\ChartCommands.cs" />
+    <Compile Include="Charts\Navigation\DefaultContextMenu.cs" />
+    <Compile Include="Charts\Navigation\KeyboardNavigation.cs" />
+    <Compile Include="Charts\Navigation\MessagesHelper.cs" />
+    <Compile Include="Charts\Navigation\MouseNavigation.cs" />
+    <Compile Include="Charts\Navigation\NavigationBase.cs" />
+    <Compile Include="Charts\Navigation\RectangleSelectionAdorner.cs" />
+    <Compile Include="Charts\Navigation\TouchPadScroll.cs" />
+    <Compile Include="Charts\Navigation\WindowsMessages.cs" />
+    <Compile Include="Charts\RemoveAll.cs" />
+    <Compile Include="Charts\Shapes\HorizontalRange.cs" />
+    <Compile Include="Charts\Shapes\RangeHighlight.cs" />
+    <Compile Include="Charts\Shapes\RectangleHighlight.cs" />
+    <Compile Include="Charts\Shapes\Segment.cs" />
+    <Compile Include="Charts\Shapes\SimpleLine.cs" />
+    <Compile Include="Charts\Shapes\VerticalRange.cs" />
+    <Compile Include="Charts\Shapes\ViewportShape.cs" />
+    <Compile Include="Charts\Shapes\VerticalLine.cs" />
+    <Compile Include="Charts\Shapes\PositionalViewportUIContainer.cs" />
+    <Compile Include="Common\Auxiliary\ArrayExtensions.cs" />
+    <Compile Include="Common\Auxiliary\BrushHelper.cs" />
+    <Compile Include="Common\Auxiliary\DebugVerify.cs" />
+    <Compile Include="Common\Auxiliary\DictionaryExtensions.cs" />
+    <Compile Include="Common\Auxiliary\IDataSource2DExtensions.cs" />
+    <Compile Include="Common\Auxiliary\IListExtensions.cs" />
+    <Compile Include="Common\Auxiliary\Verify.cs" />
+    <Compile Include="Common\PlotterChildrenCollection.cs" />
+    <Compile Include="Common\DataRect.cs" />
+    <Compile Include="Common\Footer.cs" />
+    <Compile Include="Common\Header.cs" />
+    <Compile Include="Common\Palettes\HsbPalette.cs" />
+    <Compile Include="Common\Palettes\IPalette.cs" />
+    <Compile Include="Common\Palettes\UniformLinearPalette.cs" />
+    <Compile Include="Common\Plotter.cs" />
+    <Compile Include="Common\RingArray.cs" />
+    <Compile Include="Common\UndoSystem\ActionStack.cs" />
+    <Compile Include="Common\UndoSystem\DependencyPropertyChangedUndoAction.cs" />
+    <Compile Include="Common\UndoSystem\UndoAction.cs" />
+    <Compile Include="Common\UndoSystem\UndoProvider.cs" />
+    <Compile Include="Common\VisualBindingCollection.cs" />
+    <Compile Include="GenericRect.cs" />
+    <Compile Include="DataSources\MultiDimensional\EmptyDataSource2D.cs" />
+    <Compile Include="DataSources\MultiDimensional\IDataSource2D.cs" />
+    <Compile Include="DataSources\MultiDimensional\WarpedDataSource2D.cs" />
+    <Compile Include="DataSources\OneDimensional\DataSourceExtensions.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableXDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableYDataSource.cs" />
+    <Compile Include="Charts\MagnifyingGlass.xaml.cs">
+      <DependentUpon>MagnifyingGlass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\OneDimensional\EmptyDataSource.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ExtendedPropertyChangedEventArgs.cs" />
+    <Compile Include="Charts\LineAndMarker.cs" />
+    <Compile Include="Charts\MarkerElementPointGraph.cs" />
+    <Compile Include="Descriptions\Description.cs" />
+    <Compile Include="Descriptions\PenDescription.cs" />
+    <Compile Include="Descriptions\StandardDescription.cs" />
+    <Compile Include="Charts\FakePointList.cs" />
+    <Compile Include="Charts\Legend.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Legend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\LegendItem.cs" />
+    <Compile Include="Charts\LineGraph.cs" />
+    <Compile Include="Charts\LineLegendItem.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>LineLegendItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\MarkerPointsGraph.cs" />
+    <Compile Include="PointMarkers\CirclePointMarker.cs" />
+    <Compile Include="PointMarkers\ShapePointMarker.cs" />
+    <Compile Include="PointMarkers\ElementPointMarker.cs" />
+    <Compile Include="ScaleConverter.cs" />
+    <Compile Include="Strings\Exceptions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Exceptions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Exceptions.ru-ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Exceptions.ru-ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\UIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\UIResources.ru-ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResources.ru-ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TimeChartPlotter.cs" />
+    <Compile Include="Transforms\CoordinateTransformExtensions.cs" />
+    <Compile Include="Transforms\CoordinateTransform.cs" />
+    <Compile Include="Transforms\DataDomains.cs" />
+    <Compile Include="Transforms\DataTransforms.cs" />
+    <Compile Include="Transforms\Log10Transform.cs" />
+    <Compile Include="Transforms\SwapTransform.cs" />
+    <Compile Include="Viewport2D.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Common\Auxiliary\MathHelper.cs" />
+    <Compile Include="Common\Auxiliary\BoundsHelper.cs" />
+    <Compile Include="DataSources\OneDimensional\CompositeDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\DataSourceHelper.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerablePointEnumerator.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableDataSourceBase.cs" />
+    <Compile Include="DataSources\OneDimensional\IPointDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\IPointEnumerator.cs" />
+    <Compile Include="Common\Auxiliary\IPointCollectionExtensions.cs" />
+    <Compile Include="Common\Auxiliary\ListGenerator.cs" />
+    <Compile Include="DataSources\OneDimensional\Mapping.cs" />
+    <Compile Include="DataSources\OneDimensional\ObservableDataSource.cs" />
+    <Compile Include="Plotter2D.cs" />
+    <Compile Include="DataSources\OneDimensional\RawPointEnumerator.cs" />
+    <Compile Include="DataSources\OneDimensional\RawDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\TableDataSource.cs" />
+    <Compile Include="PointMarkers\CenteredTextMarker.cs" />
+    <Compile Include="PointMarkers\CircleElementPointMarker.cs" />
+    <Compile Include="PointMarkers\CompositePointMarker.cs" />
+    <Compile Include="PointMarkers\DelegatePointMarker.cs" />
+    <Compile Include="PointMarkers\PointMarker.cs" />
+    <Compile Include="PointMarkers\ShapeElementPointMarker.cs" />
+    <Compile Include="PointMarkers\TrianglePointMarker.cs" />
+    <Compile Include="Common\Auxiliary\ColorHelper.cs" />
+    <Compile Include="Common\Auxiliary\CoordinateUtils.cs" />
+    <Compile Include="Common\Auxiliary\ScreenshotHelper.cs" />
+    <Compile Include="Common\HorizontalAxisTitle.cs" />
+    <Compile Include="Common\Auxiliary\HsbColor.cs" />
+    <Compile Include="Common\Auxiliary\ListExtensions.cs" />
+    <Compile Include="Common\PlotterElement.cs" />
+    <Compile Include="Common\Auxiliary\RectExtensions.cs" />
+    <Compile Include="Common\RenderState.cs" />
+    <Compile Include="Common\Auxiliary\PointExtensions.cs" />
+    <Compile Include="Charts\PointGraphBase.cs" />
+    <Compile Include="Common\VerticalAxisTitle.cs" />
+    <Compile Include="Plotter2DExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Viewport2D.AttachedProperties.cs" />
+    <Compile Include="Viewport2dDeferredPanningProxy.cs" />
+    <Compile Include="Viewport2DExtensions.cs" />
+    <Compile Include="Viewport2DPanningState.cs" />
+    <Compile Include="ViewportElement2D.cs" />
+    <Compile Include="ViewportRestrictions\DateTimeHorizontalAxisRestriction.cs" />
+    <Compile Include="ViewportRestrictions\DateTimeVerticalAxisRestriction.cs" />
+    <Compile Include="ViewportRestrictions\InjectionDelegateRestriction.cs" />
+    <Compile Include="ViewportRestrictions\DomainRestriction.cs" />
+    <Compile Include="ViewportRestrictions\DataHeightRestriction.cs" />
+    <Compile Include="ViewportRestrictions\FollowWidthRestriction.cs" />
+    <Compile Include="ViewportRestrictions\ISupportAttachToViewport.cs" />
+    <Compile Include="ViewportRestrictions\MaximalSizeRestriction.cs" />
+    <Compile Include="ViewportRestrictions\MinimalSizeRestriction.cs" />
+    <Compile Include="ViewportRestrictions\PhysicalProportionsRestriction.cs" />
+    <Compile Include="ViewportRestrictions\ProportionsRestriction.cs" />
+    <Compile Include="ViewportRestrictions\RestrictionCollection.cs" />
+    <Compile Include="ViewportRestrictions\ScaleInjectionRestriction.cs" />
+    <Compile Include="ViewportRestrictions\ViewportRestriction.cs" />
+    <None Include="DynamicDataDisplay.snk" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Charts\Isolines\FastIsolineDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Isolines\IsolineTrackingGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Legend items\LegendResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Legend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\LineLegendItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Axes\AxisControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Navigation\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Navigation\LongOperationsIndicatorResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Navigation\SimpleNavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Navigation\CursorCoordinateGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Shapes\DraggablePoint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\Shapes\RangeHighlightStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\PlotterStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Charts\MagnifyingGlass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SaveIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FitToViewIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CopyScreenshotIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\HelpIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicDataDisplay.Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\D3-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\D3-icon-white.ico" />
+    <EmbeddedResource Include="Strings\Exceptions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Exceptions.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings\Exceptions.ru-ru.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Exceptions.ru-ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings\UIResources.ru-ru.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.ru-ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings\UIResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Changelog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicDataDisplay.License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Toolbox\ChartPlotter.Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16CA59CE-4664-4739-A1B1-1FCD0447595E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Research.DynamicDataDisplay.Samples</RootNamespace>
+    <AssemblyName>DynamicDataDisplay.Samples</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>D3-icon.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DynamicDataDisplay.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseXBAP|AnyCPU' ">
+    <OutputPath>bin\ReleaseXBAP\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\WpfToolkit\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Demos\v02\AnimationSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v02\CurrencyExchange\CurrencyExchangeSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v02\ImageHistogram.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v02\StockExchange\StockExchangeSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v02\TooltipSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v031\AxisColoringSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v031\HideAxisSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v03\Coastline.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v03\Isolines\Isolines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v03\Maps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v03\MercatorShaderMaps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v03\SimulationSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\EditableShapesSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\AcceptableRangePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\BarChart page\BarChartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\BigPointArrayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\ColumnChartSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\DifferentBuildInMarkersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\NewMarkersSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\PieChart page\PieChartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demos\v04\Markers\StockMarkersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Internals\Views\DemonstrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Internals\Views\DetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Internals\Views\FlatDemonstrationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Internals\Views\ReleaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Internals\Views\TreeDemonstrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Demos\v02\AnimationSample.xaml.cs">
+      <DependentUpon>AnimationSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v02\CurrencyExchange\CurrencyExchangeSample.xaml.cs">
+      <DependentUpon>CurrencyExchangeSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v02\CurrencyExchange\CurrencyInfo.cs" />
+    <Compile Include="Demos\v02\ImageHistogram.xaml.cs">
+      <DependentUpon>ImageHistogram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v02\StockExchange\StockExchangeSample.xaml.cs">
+      <DependentUpon>StockExchangeSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v02\TooltipSample.xaml.cs">
+      <DependentUpon>TooltipSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v031\AxisColoringSample.xaml.cs">
+      <DependentUpon>AxisColoringSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v031\HideAxisSample.xaml.cs">
+      <DependentUpon>HideAxisSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v03\Coastline.xaml.cs">
+      <DependentUpon>Coastline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v03\Isolines\Isolines.xaml.cs">
+      <DependentUpon>Isolines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v03\Maps.xaml.cs">
+      <DependentUpon>Maps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v03\MercatorShaderMaps.xaml.cs">
+      <DependentUpon>MercatorShaderMaps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v03\SimulationSample.xaml.cs">
+      <DependentUpon>SimulationSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\EditableShapesSample.xaml.cs">
+      <DependentUpon>EditableShapesSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\AcceptableRangePage.xaml.cs">
+      <DependentUpon>AcceptableRangePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\BarChart page\BarChartPage.xaml.cs">
+      <DependentUpon>BarChartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\BarChart page\HeightToFillConverter.cs" />
+    <Compile Include="Demos\v04\Markers\BarChart page\TooltipConverter.cs" />
+    <Compile Include="Demos\v04\Markers\BigPointArrayPage.xaml.cs">
+      <DependentUpon>BigPointArrayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\ColumnChartSample.xaml.cs">
+      <DependentUpon>ColumnChartSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\DifferentBuildInMarkersPage.xaml.cs">
+      <DependentUpon>DifferentBuildInMarkersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\NewMarkersSample.xaml.cs">
+      <DependentUpon>NewMarkersSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\PieChart page\PieChartPage.xaml.cs">
+      <DependentUpon>PieChartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\v04\Markers\PieChart page\SellInfo.cs" />
+    <Compile Include="Demos\v04\Markers\Segment.cs" />
+    <Compile Include="Demos\v04\Markers\StockMarkersPage.xaml.cs">
+      <DependentUpon>StockMarkersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\Models\ReleaseInfo.cs" />
+    <Compile Include="Internals\Models\ReleaseVersion.cs" />
+    <Compile Include="Internals\Models\Demonstration.cs" />
+    <Compile Include="Internals\Models\SamplesCollection.cs" />
+    <Compile Include="Internals\ResourceExtensions.cs" />
+    <Compile Include="Internals\VersionToBrushConverter.cs" />
+    <Compile Include="Internals\VersionTypeConverter.cs" />
+    <Compile Include="Internals\ViewModels\DemonstrationViewModel.cs" />
+    <Compile Include="Internals\ViewModels\FlatViewModel.cs" />
+    <Compile Include="Internals\ViewState.cs" />
+    <Compile Include="Internals\Views\DemonstrationView.xaml.cs">
+      <DependentUpon>DemonstrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\Views\DetailsView.xaml.cs">
+      <DependentUpon>DetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\Views\FlatDemonstrationsView.xaml.cs">
+      <DependentUpon>FlatDemonstrationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\Views\ReleaseView.xaml.cs">
+      <DependentUpon>ReleaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\Views\TreeDemonstrationView.xaml.cs">
+      <DependentUpon>TreeDemonstrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\Views\ViewBase.cs" />
+    <Compile Include="Internals\Views\ViewService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Strings\UIResources.ru-ru.Designer.cs">
+      <DependentUpon>UIResources.ru-ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Strings\UIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Strings\UIResources.ru-ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.ru-ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings\UIResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DynamicDataDisplay.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="D3-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicDataDisplay.Coastline\DynamicDataDisplay.Coastline.csproj">
+      <Project>{F14D455C-E581-41FF-8C33-561C85A83449}</Project>
+      <Name>DynamicDataDisplay.Coastline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicDataDisplay.Maps\DynamicDataDisplay.Maps.csproj">
+      <Project>{EB04A4CD-DDE6-49EB-8FB6-39B35482D792}</Project>
+      <Name>DynamicDataDisplay.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicDataDisplay.Markers\DynamicDataDisplay.Markers.csproj">
+      <Project>{A5EB794C-7C62-4A0C-A441-ACF7D4074C5D}</Project>
+      <Name>DynamicDataDisplay.Markers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicDataDisplay\DynamicDataDisplay.csproj">
+      <Project>{ECD37682-DF7E-409F-912D-0965634556B5}</Project>
+      <Name>DynamicDataDisplay</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Demos\v02\CurrencyExchange\eur.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v02\CurrencyExchange\gbp.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v02\CurrencyExchange\jpy.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v02\CurrencyExchange\usd.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v02\StockExchange\RTS.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v02\StockExchange\MICEX.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v02\StockExchange\DJ65.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v03\Isolines\SampleData.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demos\v03\Repressilator.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

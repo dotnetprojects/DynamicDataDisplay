@@ -1,0 +1,1 @@
+﻿This sample shows how to make one chart closer to observer without changing its position in legend.

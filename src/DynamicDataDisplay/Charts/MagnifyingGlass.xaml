@@ -1,0 +1,26 @@
+﻿<Grid x:Class="Microsoft.Research.DynamicDataDisplay.MagnifyingGlass"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				Name="magnifyingCanvas" IsHitTestVisible="False"
+>
+    <Grid.Style>
+        <Style TargetType="{x:Type Grid}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="100"/>
+        </Style>
+    </Grid.Style>
+
+    <Ellipse Fill="White" Name="whiteEllipse"/>
+    <Ellipse Name="magnifierEllipse" StrokeThickness="3">
+        <Ellipse.Fill>
+            <VisualBrush ViewboxUnits="Absolute" Viewbox="0,0,50,50"
+                   ViewportUnits="RelativeToBoundingBox" Viewport="0,0,1,1"/>
+        </Ellipse.Fill>
+        <Ellipse.Stroke>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Offset="0" Color="#AAA" />
+                <GradientStop Offset="1" Color="#111" />
+            </LinearGradientBrush>
+        </Ellipse.Stroke>
+    </Ellipse>
+</Grid>

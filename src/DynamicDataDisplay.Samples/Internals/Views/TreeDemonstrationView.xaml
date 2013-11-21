@@ -1,0 +1,39 @@
+﻿<v:ViewBase	    x:Class="Microsoft.Research.DynamicDataDisplay.Samples.Internals.Views.TreeDemonstrationView"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:model="clr-namespace:Microsoft.Research.DynamicDataDisplay.Samples.Internals.Models"
+				xmlns:v="clr-namespace:Microsoft.Research.DynamicDataDisplay.Samples.Internals.Views"
+				xmlns:p="clr-namespace:Microsoft.Research.DynamicDataDisplay.Samples.Internals"
+				Loaded="OnLoaded" Background="AliceBlue"
+    >
+	<UserControl.Resources>
+		<HierarchicalDataTemplate DataType="{x:Type model:ReleaseInfo}" ItemsSource="{Binding Demonstrations}">
+			<StackPanel Orientation="Horizontal">
+				<StackPanel.ToolTip>
+					<TextBlock>
+						<TextBlock Text="{p:Resource ReleaseTooltip}"/><TextBlock Text="{Binding Version}"/><TextBlock>.</TextBlock>
+					</TextBlock>
+				</StackPanel.ToolTip>
+				<TextBlock Text="{p:Resource Release}"/>
+				<TextBlock Text=" "/>
+				<Grid Style="{StaticResource GridStyle}">
+					<Rectangle Style="{StaticResource RectangleStyle}"/>
+					<TextBlock Text="{Binding Version}" Style="{StaticResource TextStyle}"/>
+				</Grid>
+			</StackPanel>
+		</HierarchicalDataTemplate>
+
+		<HierarchicalDataTemplate DataType="{x:Type model:Demonstration}">
+			<TextBlock Text="{Binding Description}"/>
+		</HierarchicalDataTemplate>
+	</UserControl.Resources>
+
+	<TreeView ItemsSource="{Binding Releases}" x:Name="tree" Margin="3" Background="AliceBlue" BorderBrush="{x:Null}">
+		<TreeView.ItemContainerStyle>
+			<Style TargetType="{x:Type TreeViewItem}">
+				<Setter Property="IsExpanded" Value="True"/>
+			</Style>
+		</TreeView.ItemContainerStyle>
+	</TreeView>
+
+</v:ViewBase>

@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+										xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:local="clr-namespace:Microsoft.Research.DynamicDataDisplay.Charts"
+										>
+	<Style TargetType="{x:Type Grid}" x:Key="gridStyle">
+		<Setter Property="Grid.ClipToBounds" Value="False"/>
+	</Style>
+
+	<RotateTransform Angle="-90" x:Key="additionalLabelsTransformLeft"/>
+
+	<ControlTemplate x:Key="axisControlTemplateBottom">
+		<Grid Style="{StaticResource gridStyle}" Name="PART_ContentsGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<Path Name="PART_TicksPath" Grid.Row="0" Stroke="Black"/>
+			<local:StackCanvas Name="PART_CommonLabelsCanvas" Grid.Row="1" Placement="Bottom"/>
+			<local:StackCanvas Name="PART_AdditionalLabelsCanvas" Grid.Row="2" Placement="Bottom"/>
+		</Grid>
+	</ControlTemplate>
+
+	<ControlTemplate x:Key="axisControlTemplateTop">
+		<Grid Background="{TemplateBinding Background}" Style="{StaticResource gridStyle}" Name="PART_ContentsGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<Path Name="PART_TicksPath" Grid.Row="2" Stroke="Black">
+				<Path.LayoutTransform>
+					<MatrixTransform Matrix="1,0,0,-1.1,0,0"/>
+				</Path.LayoutTransform>
+			</Path>
+			<local:StackCanvas Name="PART_CommonLabelsCanvas" Grid.Row="1" Placement="Top"/>
+			<local:StackCanvas Name="PART_AdditionalLabelsCanvas" Grid.Row="0" Placement="Top"/>
+		</Grid>
+	</ControlTemplate>
+
+	<ControlTemplate x:Key="axisControlTemplateLeft">
+		<Grid Background="{TemplateBinding Background}" Style="{StaticResource gridStyle}" Name="PART_ContentsGrid">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<Rectangle Grid.Column="2"/>
+			<Path Name="PART_TicksPath" Grid.Column="2" Stroke="Black">
+				<Path.LayoutTransform>
+					<MatrixTransform Matrix="-1,0,0,1,0,0"/>
+				</Path.LayoutTransform>
+			</Path>
+			<local:StackCanvas Name="PART_CommonLabelsCanvas" Grid.Column="1" Placement="Left" Margin="1,0,1,0"/>
+			<local:StackCanvas Name="PART_AdditionalLabelsCanvas" Grid.Column="0" Placement="Left" Margin="1,0,1,0"/>
+		</Grid>
+	</ControlTemplate>
+
+	<ControlTemplate x:Key="axisControlTemplateRight">
+		<Grid Background="{TemplateBinding Background}" Style="{StaticResource gridStyle}" Name="PART_ContentsGrid">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<Path Name="PART_TicksPath" Grid.Column="0" Stroke="Black"/>
+			<local:StackCanvas Name="PART_CommonLabelsCanvas" Grid.Column="1" Placement="Right" Margin="1,0,0,0"/>
+			<local:StackCanvas Name="PART_AdditionalLabelsCanvas" Grid.Column="2" Placement="Right"/>
+		</Grid>
+	</ControlTemplate>
+
+</ResourceDictionary>

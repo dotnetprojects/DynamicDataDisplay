@@ -1,0 +1,128 @@
+﻿<Window x:Class="Microsoft.Research.DynamicDataDisplay.Charts.Navigation.AboutWindow" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:Microsoft.Research.DynamicDataDisplay"
+        xmlns:p="clr-namespace:Microsoft.Research.DynamicDataDisplay.MarkupExtensions"
+        Width="400"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        Icon="{x:Static l:D3IconHelper.DynamicDataDisplayIcon}"
+        Title="{p:Resource AboutTitle}"
+        KeyDown="Window_KeyDown" SizeToContent="Height">
+    <Grid>
+        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Disabled">
+            <FlowDocument FontSize="14">
+                <FlowDocument.Resources>
+                    <Style TargetType="{x:Type Run}" x:Key="nav">
+                        <Setter Property="Foreground" Value="#FF00A010"/>
+                    </Style>
+
+                    <Style TargetType="InlineUIContainer" x:Key="{x:Type InlineUIContainer}">
+                        <Setter Property="BaselineAlignment" Value="Center"/>
+                    </Style>
+
+                    <Style TargetType="ContentControl" x:Key="btn">
+                        <Setter Property="Margin" Value="0,1,0,1"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontFamily" Value="Lucida Console"/>
+                    </Style>
+
+                    <Style TargetType="ContentControl" x:Key="commandBtn">
+                        <Setter Property="Margin" Value="0,1,0,1"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontFamily" Value="Lucida Console"/>
+                    </Style>
+                </FlowDocument.Resources>
+
+                <Paragraph>
+                    <Hyperlink Foreground="#FF0A00A0" FontSize="16" Click="Hyperlink_Click" ToolTip="{p:Resource AboutSiteUrl}" NavigateUri="http://dynamicdatadisplay.codeplex.com/">Dynamic Data Display</Hyperlink>
+                    <Run Name="r1" Text="{p:Resource About_1}"/>
+                    <InlineUIContainer>
+                        <RepeatButton Content="Shift" Style="{DynamicResource btn}"/>
+                    </InlineUIContainer>
+                    <Run Name="r2" Text="{p:Resource About_2}"/>
+                    <InlineUIContainer>
+                        <RepeatButton Content="Ctrl" Style="{DynamicResource btn}"/>
+                    </InlineUIContainer>
+                    <Run Name="r3" Text="{p:Resource About_3}"/>
+                    <LineBreak/>
+                    <Span>
+                        <Run Name="r4" Style="{DynamicResource nav}" Text="{p:Resource About_4}"/> ,
+                    </Span>
+                    <Run Name="r6" Text="{p:Resource About_6}"/>
+                    <InlineUIContainer>
+                        <RepeatButton Style="{DynamicResource btn}" Content="+" Command="{x:Static l:ChartCommands.ZoomIn}" CommandTarget="{Binding}"/>
+                    </InlineUIContainer>
+                    <Run Name="r5" Text="{p:Resource About_5}"/>
+                    <InlineUIContainer>
+                        <RepeatButton Style="{DynamicResource btn}" Content="-" Command="{x:Static l:ChartCommands.ZoomOut}" CommandTarget="{Binding}"/>
+                    </InlineUIContainer>
+                    <Run Name="r7" Text="{p:Resource About_7}"/>
+                    <LineBreak/>
+                    <Run Name="r8" Text="{p:Resource About_8}" Style="{DynamicResource nav}"/>
+                    <Run Name="r9" Text="{p:Resource About_2}"/>
+                    <InlineUIContainer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <RepeatButton Grid.Column="1" Grid.Row="0" Style="{DynamicResource btn}" FontSize="16" 
+                                          Content="↑" Margin="2" Command="{x:Static l:ChartCommands.ScrollUp}" CommandTarget="{Binding}"/>
+                            <RepeatButton Grid.Column="0" Grid.Row="1" Style="{DynamicResource btn}" FontSize="16" 
+                                          Content="←" Margin="2" Command="{x:Static l:ChartCommands.ScrollLeft}" CommandTarget="{Binding}"/>
+                            <RepeatButton Grid.Column="1" Grid.Row="1" Style="{DynamicResource btn}" FontSize="16" 
+                                          Content="↓" Margin="2" Command="{x:Static l:ChartCommands.ScrollDown}" CommandTarget="{Binding}"/>
+                            <RepeatButton Grid.Column="2" Grid.Row="1" Style="{DynamicResource btn}" FontSize="16" 
+                                          Content="→" Margin="2" Command="{x:Static l:ChartCommands.ScrollRight}" CommandTarget="{Binding}"/>
+                        </Grid>
+                    </InlineUIContainer>
+                    <Run Name="r10" Text="{p:Resource About_9}"/>
+                    <LineBreak/>
+                    <InlineUIContainer>
+                        <RepeatButton Style="{DynamicResource commandBtn}" Content="Ctrl"/>
+                    </InlineUIContainer>
+                    <Run>+</Run>
+                    <Run Name="r11" Style="{DynamicResource nav}" Text="{p:Resource About_10}"/>
+                    <Run Name="r14" Text="{p:Resource About_12}"/>
+                    <LineBreak/>
+                    <InlineUIContainer>
+                        <RepeatButton Style="{DynamicResource commandBtn}" Content="Shift"/>
+                    </InlineUIContainer>
+                    <Run>+</Run>
+                    <Run Name="r12" Style="{DynamicResource nav}" Text="{p:Resource About_10}"/>
+                    <Run Name="r13" Text="{p:Resource About_11}"/>
+                    <LineBreak/>
+                    <InlineUIContainer>
+                        <Button Style="{DynamicResource commandBtn}" Content="Home" Command="{x:Static l:ChartCommands.FitToView}" CommandTarget="{Binding}"/>
+                    </InlineUIContainer>
+                    <Run Name="r15" Text="{p:Resource About_13}"/>
+                    <LineBreak/>
+                    <InlineUIContainer>
+                        <Button Style="{DynamicResource commandBtn}" Content="F11" Command="{x:Static l:ChartCommands.CopyScreenshot}" CommandTarget="{Binding}"/>
+                    </InlineUIContainer>
+                    <Run Name="r16" Text="{p:Resource About_15}"/>
+                    <LineBreak/>
+                    <InlineUIContainer>
+                        <Button Style="{DynamicResource commandBtn}" Content="Ctrl" Command="{x:Static l:ChartCommands.SaveScreenshot}" CommandTarget="{Binding}"/>
+                    </InlineUIContainer>
+                    <Run>+</Run>
+                    <InlineUIContainer>
+                        <Button Style="{DynamicResource commandBtn}" Content="S" Command="{x:Static l:ChartCommands.SaveScreenshot}" CommandTarget="{Binding}"/>
+                    </InlineUIContainer>
+                    <Run Name="r17" Text="{p:Resource About_15}"/>
+                </Paragraph>
+                <Paragraph TextAlignment="Center">
+                    <Hyperlink Foreground="#FF0A00A0" NavigateUri="http://dynamicdatadisplay.codeplex.com" ToolTip="{p:Resource AboutSireUrl}" Click="Hyperlink_Click_1">
+                        <TextBlock Text="{p:Resource AboutSiteUrl}"/>
+                    </Hyperlink>
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

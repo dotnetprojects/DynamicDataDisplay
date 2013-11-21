@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDataDisplay", "..\..\src\DynamicDataDisplay\DynamicDataDisplay.csproj", "{ECD37682-DF7E-409F-912D-0965634556B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSeriesNcmlPlotter", "..\..\src\TimeSeriesNcmlPlotter\TimeSeriesNcmlPlotter.csproj", "{4959FCD5-08EE-4B28-9695-A414CE2CFA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSeriesNcmlPlotterSample", "TimeSeriesNcmlPlotterSample\TimeSeriesNcmlPlotterSample.csproj", "{0034CEA3-9796-477E-A8DA-73112ADAC55F}"
+EndProject
+Global
+	 		 		 		 		 		 		 		 		 		 		 		 		 		 	 
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD37682-DF7E-409F-912D-0965634556B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4959FCD5-08EE-4B28-9695-A414CE2CFA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4959FCD5-08EE-4B28-9695-A414CE2CFA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4959FCD5-08EE-4B28-9695-A414CE2CFA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4959FCD5-08EE-4B28-9695-A414CE2CFA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0034CEA3-9796-477E-A8DA-73112ADAC55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0034CEA3-9796-477E-A8DA-73112ADAC55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0034CEA3-9796-477E-A8DA-73112ADAC55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0034CEA3-9796-477E-A8DA-73112ADAC55F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

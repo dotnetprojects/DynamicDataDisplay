@@ -1,0 +1,6 @@
+﻿<Application x:Class="AxisControlSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	StartupUri="CMGraham Bug LogYWindow.xaml">
+    <!--StartupUri="Window3.xaml">-->
+</Application>

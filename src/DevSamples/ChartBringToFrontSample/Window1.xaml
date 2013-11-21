@@ -1,0 +1,24 @@
+﻿<Window x:Class="ChartBringToFrontSample.Window1"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+		Title="Window1" WindowState="Maximized" Loaded="Window_Loaded">
+	<Grid>
+		<d3:ChartPlotter Name="plotter" Background="Transparent">
+			<Button Content="Swap charts" Name="swapChartsBtn" Click="swapChartsBtn_Click"/>
+			<Grid Canvas.Left="10" Canvas.Bottom="10" Width="160">
+				<Rectangle Stroke="DarkGray" StrokeThickness="1" RadiusX="5" RadiusY="5" Fill="White"/>
+				<TextBlock Margin="5" TextWrapping="Wrap" TextAlignment="Justify">
+					<InlineUIContainer BaselineAlignment="Bottom">
+						<Grid Width="16" Height="16">
+							<Ellipse Stroke="Blue" StrokeThickness="1"/>
+							<TextBlock Foreground="Blue" HorizontalAlignment="Center" FontWeight="{x:Static FontWeights.Bold}" VerticalAlignment="Center">i</TextBlock>
+						</Grid>
+					</InlineUIContainer>
+					This sample shows how to make one chart closer to observer without changing its position in legend.
+				</TextBlock>
+			</Grid>
+		</d3:ChartPlotter>
+
+	</Grid>
+</Window>

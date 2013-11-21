@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Stats xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+    <snr>0.68</snr>
+    <dataMean>24.412920412920414</dataMean>
+    <dataMedian>14</dataMedian>
+    <dataDist>
+        <xAxisLabel>Data Distribution</xAxisLabel>
+        <yAxisLabel>Counts</yAxisLabel>
+        <plotTitle>Counts Distribution</plotTitle>
+        <NumPoints>14</NumPoints>
+        <DataCounts>1</DataCounts>
+        <DataCounts>1</DataCounts>
+        <DataCounts>6</DataCounts>
+        <DataCounts>101</DataCounts>
+        <DataCounts>1935</DataCounts>
+        <DataCounts>3187</DataCounts>
+        <DataCounts>3650</DataCounts>
+        <DataCounts>3342</DataCounts>
+        <DataCounts>0</DataCounts>
+        <DataCounts>3233</DataCounts>
+        <DataCounts>1695</DataCounts>
+        <DataCounts>0</DataCounts>
+        <DataCounts>0</DataCounts>
+        <DataCounts>456</DataCounts>
+        <Minimum>0</Minimum>
+        <Maximum>3650</Maximum>
+    </dataDist>
+</Stats>

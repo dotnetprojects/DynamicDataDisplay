@@ -1,0 +1,24 @@
+﻿<Window x:Class="LineSample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    Title="Line sample" Height="300" Width="300">
+	<Grid>
+		<c:ChartPlotter Name="plotter">
+			<c:RectangleHighlight Bounds="0.1, 0.6, 0.15, 0.2" StrokeThickness="2" Fill="MidnightBlue"
+									 ToolTip="Sample region"/>
+			<c:HorizontalLine Value="0.5" StrokeThickness="2" ToolTip="Hamster was here"/>
+			<c:HorizontalLine Value="0.25"/>
+			<c:VerticalLine Value="0.4"/>
+			<c:VerticalLine Value="0.7"/>
+			<c:Segment StartPoint="0.3, 0.45" EndPoint="0.5, 0.65" Stroke="Green" StrokeThickness="2"
+								 StrokeDashArray="2"/>
+			<c:HorizontalRange Value1="0.1" Value2="0.15" Fill="Green"/>
+			<c:VerticalRange Value1="0.1" Value2="0.12" Fill="Fuchsia"/>
+
+			<c:PositionalViewportUIContainer Position="0.3,0.7">
+				<Button>Hello!</Button>
+			</c:PositionalViewportUIContainer>
+		</c:ChartPlotter>
+	</Grid>
+</Window>

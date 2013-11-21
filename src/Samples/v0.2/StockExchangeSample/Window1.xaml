@@ -1,0 +1,17 @@
+﻿<Window x:Class="StockExchangeSample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="http://research.microsoft.com/DynamicDataDisplay/1.0"
+    Title="Window1" WindowState="Maximized">
+	<Grid>
+		<c:ChartPlotter Name="plotter">
+			<c:ChartPlotter.MainHorizontalAxis>
+				<c:HorizontalDateTimeAxis Name="dateAxis"/>
+			</c:ChartPlotter.MainHorizontalAxis>
+
+			<c:Header FontFamily="Georgia" Content="Stock exchange rate"/>
+			<c:VerticalAxisTitle FontFamily="Georgia" Content="Stock index value"/>
+			<c:HorizontalAxisTitle FontFamily="Georgia" Content="Date"/>
+		</c:ChartPlotter>
+	</Grid>
+</Window>

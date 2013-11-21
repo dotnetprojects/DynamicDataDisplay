@@ -1,0 +1,19 @@
+﻿<d3:IsolineGraphBase x:Class="Microsoft.Research.DynamicDataDisplay.Charts.IsolineTrackingGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay.Charts.Isolines"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<d3:IsolineGraphBase.Style>
+		<Style TargetType="{x:Type d3:IsolineGraphBase}">
+			<Setter Property="Cursor" Value="Cross"/>
+			<Setter Property="StrokeThickness" Value="3"/>
+		</Style>
+	</d3:IsolineGraphBase.Style>
+
+	<Canvas Name="content" Background="Transparent">
+		<Grid Name="labelGrid" Visibility="Hidden" Panel.ZIndex="1">
+			<Rectangle RadiusX="10" RadiusY="10" Stroke="DarkGray"
+					   StrokeThickness="1" Fill="#AAFFFFFF"/>
+			<TextBlock Name="textBlock" Margin="10,5,10,5"/>
+		</Grid>
+	</Canvas>
+</d3:IsolineGraphBase>

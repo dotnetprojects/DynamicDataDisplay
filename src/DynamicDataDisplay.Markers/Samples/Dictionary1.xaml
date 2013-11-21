@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+	<ChartPlotter>
+		<MarkerChart x:Name="chart"> 
+			<TemplateMarker>
+				<DataTemplate DataType="{x:Type StockInfo}">
+					<Eliipse d3:ViewportPanel.X="{Binding Time}"
+							d3:ViewprotPanel.Y="{Binding Open}"/>
+				</DataTemplate>
+			</TemplateMarker>
+		</MarkerChart>
+	</ChartPlotter>
+	
+</ResourceDictionary>
