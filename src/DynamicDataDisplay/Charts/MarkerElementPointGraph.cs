@@ -27,18 +27,32 @@ namespace Microsoft.Research.DynamicDataDisplay
             DataSource = dataSource;
         }
 
-        Grid grid;
-        Canvas canvas;
+        private Grid grid;
+        private Canvas canvas;
 
         protected override void OnPlotterAttached(Plotter plotter)
         {
             base.OnPlotterAttached(plotter);
 
             grid = new Grid();
-            canvas = new Canvas { ClipToBounds = true };
+            canvas = new Canvas {ClipToBounds = true};
             grid.Children.Add(canvas);
 
             Plotter2D.CentralGrid.Children.Add(grid);
+            Panel.SetZIndex(grid, base.ZIndex);
+        }
+
+        public override int ZIndex
+        {
+            get { return this.grid != null ? Panel.GetZIndex(this.grid) : base.ZIndex; }
+            set
+            {
+                base.ZIndex = value;
+                if (this.grid != null)
+                {
+                    Panel.SetZIndex(this.grid, value);
+                }
+            }
         }
 
         protected override void OnPlotterDetaching(Plotter plotter)
@@ -64,17 +78,17 @@ namespace Microsoft.Research.DynamicDataDisplay
 
         public ElementPointMarker Marker
         {
-            get { return (ElementPointMarker)GetValue(MarkerProperty); }
+            get { return (ElementPointMarker) GetValue(MarkerProperty); }
             set { SetValue(MarkerProperty, value); }
         }
 
         public static readonly DependencyProperty MarkerProperty =
             DependencyProperty.Register(
-              "Marker",
-              typeof(ElementPointMarker),
-              typeof(ElementMarkerPointsGraph),
-              new FrameworkPropertyMetadata { DefaultValue = null, AffectsRender = true }
-                  );
+                "Marker",
+                typeof (ElementPointMarker),
+                typeof (ElementMarkerPointsGraph),
+                new FrameworkPropertyMetadata {DefaultValue = null, AffectsRender = true}
+                );
 
         protected override void OnRenderCore(DrawingContext dc, RenderState state)
         {
@@ -92,14 +106,14 @@ namespace Microsoft.Research.DynamicDataDisplay
             }
             else // There is some data
             {
-          
+
                 int index = 0;
                 var transform = GetTransform();
                 using (IPointEnumerator enumerator = DataSource.GetEnumerator(GetContext()))
                 {
                     Point point = new Point();
 
-					DataRect bounds = DataRect.Empty;
+                    DataRect bounds = DataRect.Empty;
 
                     while (enumerator.MoveNext())
                     {
@@ -120,13 +134,13 @@ namespace Microsoft.Research.DynamicDataDisplay
                         }
 
                         Marker.SetMarkerProperties(canvas.Children[index]);
-						bounds.Union(point);
+                        bounds.Union(point);
                         Point screenPoint = point.DataToScreen(transform);
                         Marker.SetPosition(canvas.Children[index], screenPoint);
                         index++;
                     }
 
-					Viewport2D.SetContentBounds(this, bounds);
+                    Viewport2D.SetContentBounds(this, bounds);
 
                     while (index < canvas.Children.Count)
                     {

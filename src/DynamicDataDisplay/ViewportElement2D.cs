@@ -70,8 +70,8 @@ namespace Microsoft.Research.DynamicDataDisplay
 			get { return plotter2D; }
 		}
 
-		public int ZIndex
-		{
+        public virtual int ZIndex
+        {
 			get { return Panel.GetZIndex(this); }
 			set { Panel.SetZIndex(this, value); }
 		}
