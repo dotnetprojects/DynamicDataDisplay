@@ -70,7 +70,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Charts.Maps
                 if (!bmp.IsFrozen) { 
                 }
 
-                Task saveTask = Task.Create((unused) =>
+                Task saveTask = Task.Factory.StartNew(() =>
                 {
                     if (stream == null)
                     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,6 @@ using Microsoft.Research.DynamicDataDisplay.Common.Auxiliary;
 using System.Windows.Threading;
 using System.Windows.Media;
 using System.Threading.Tasks;
-using System.Threading.Collections;
-using System.Threading;
 
 namespace Microsoft.Research.DynamicDataDisplay.Charts.Maps
 {
@@ -55,7 +54,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Charts.Maps
 				runningRequests++;
 				Statistics.IntValues["ImagesLoaded"]++;
 
-				Task loadTileTask = Task.Create((unused) =>
+				Task loadTileTask = Task.Factory.StartNew(() =>
 				{
 					var bmp = BeginLoadImageAsync(id);
 					var stream = BeginLoadStreamAsync(id);

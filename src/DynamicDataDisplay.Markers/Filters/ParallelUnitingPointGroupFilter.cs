@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.Charts.NewLine.Filters;
 using Microsoft.Research.DynamicDataDisplay.Common.Auxiliary;
-using System.Threading.Collections;
 
 namespace DynamicDataDisplay.Markers.Filters
 {

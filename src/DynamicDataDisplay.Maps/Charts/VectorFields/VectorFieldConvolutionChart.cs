@@ -11,6 +11,7 @@ using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay.Maps.Charts.VectorFields;
 using Microsoft.Research.DynamicDataDisplay.Charts.Isolines;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Microsoft.Research.DynamicDataDisplay.Maps.Charts
 {

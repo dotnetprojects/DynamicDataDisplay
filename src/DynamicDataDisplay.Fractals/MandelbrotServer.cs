@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Research.DynamicDataDisplay.Charts.Maps;
-using Microsoft.Research.DynamicDataDisplay.Maps.Servers.Network;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using System.Diagnostics;
-using Microsoft.Research.DynamicDataDisplay.Common.Palettes;
+using System.Collections.Concurrent;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Threading.Collections;
+using Microsoft.Research.DynamicDataDisplay.Charts.Maps;
+using Microsoft.Research.DynamicDataDisplay.Common.Palettes;
+using Microsoft.Research.DynamicDataDisplay.Maps.Servers.Network;
 
 namespace Microsoft.Research.DynamicDataDisplay.Fractals
 {
@@ -18,7 +13,9 @@ namespace Microsoft.Research.DynamicDataDisplay.Fractals
         private const int size = 128;
 
         ConcurrentStack<TaskInfo> tasks = new ConcurrentStack<TaskInfo>();
-        TaskManager manager;
+        LimitedConcurrencyLevelTaskScheduler manager;
+        TaskFactory factory;
+
         public MandelbrotServer()
         {
             TileWidth = size;
@@ -31,8 +28,10 @@ namespace Microsoft.Research.DynamicDataDisplay.Fractals
 
             // todo number of processors being used is a problem - too small is slow, too big blocks all other threads, including rendering thread, so
             // application stops to respond.
-            TaskManagerPolicy policy = new TaskManagerPolicy(1, Environment.ProcessorCount, 1, 0, System.Threading.ThreadPriority.Lowest);
-            manager = new TaskManager(policy);
+            //TaskManagerPolicy policy = new TaskManagerPolicy(1, Environment.ProcessorCount, 1, 0, ThreadPriority.Lowest);
+            //manager = new TaskManager(policy);
+            manager = new LimitedConcurrencyLevelTaskScheduler(Environment.ProcessorCount*10);
+            factory = new TaskFactory(manager);
         }
 
         public override bool Contains(TileIndex id)
@@ -64,7 +63,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Fractals
 
         private void CreateTask(TileIndex id, DataRect bounds)
         {
-            Task task = Task.Create(o =>
+            var task = factory.StartNew(() =>
             {
                 var set = new MandelbrotSet(size, bounds);
                 set.Palette = new HSBPalette();
@@ -73,7 +72,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Fractals
                 ReportSuccessAsync(null, bmp, id);
 
                 LookForNexttask();
-            }, manager);
+            });
         }
 
         private void LookForNexttask()

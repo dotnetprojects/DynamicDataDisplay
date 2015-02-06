@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using Microsoft.Research.DynamicDataDisplay;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace DynamicDataDisplay.Markers.Filters
 {

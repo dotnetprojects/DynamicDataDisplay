@@ -1,24 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
-using System.Diagnostics;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
+using System.Collections.Concurrent;
 using System.IO;
-using System.Runtime.CompilerServices;
-using Microsoft.Research.DynamicDataDisplay.Maps.Servers.Network;
-using Microsoft.Research.DynamicDataDisplay;
-using Microsoft.Research.DynamicDataDisplay.Common;
-using Microsoft.Research.DynamicDataDisplay.Common.Auxiliary;
+using System.Net;
 using System.Net.NetworkInformation;
-using System.Threading.Collections;
 using System.Threading.Tasks;
-using Microsoft.Research.DynamicDataDisplay.Maps;
 using System.Windows;
-using Microsoft.Research.DynamicDataDisplay.Maps.Servers;
-using System.Threading;
+using System.Windows.Media.Imaging;
+using Microsoft.Research.DynamicDataDisplay.Common.Auxiliary;
+using Microsoft.Research.DynamicDataDisplay.Maps;
+using Microsoft.Research.DynamicDataDisplay.Maps.Properties;
+using Microsoft.Research.DynamicDataDisplay.Maps.Servers.Network;
 
 namespace Microsoft.Research.DynamicDataDisplay.Charts.Maps
 {
@@ -92,7 +83,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Charts.Maps
             }
             else
             {
-                Task.Create(o =>
+                Task.Factory.StartNew(() =>
                 {
                     request.BeginGetResponse(ResponseReadyCallback, new ResponseCallbackInfo { ID = id, Request = request });
                 }).WithExceptionThrowingInDispatcher(Dispatcher);
@@ -146,7 +137,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Charts.Maps
             if (id.Level < MinLevel || id.Level > MaxLevel)
                 throw new ArgumentException(
                     String.Format(
-                    DynamicDataDisplay.Maps.Properties.Resources.InvalidTileLevel,
+                    Resources.InvalidTileLevel,
                         id.Level, MinLevel, MaxLevel),
                     "id");
         }

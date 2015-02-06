@@ -75,7 +75,7 @@ namespace DynamicDataDisplay.Markers.DataSources
 			else
 			{
 #if !RELEASEXBAP
-				Task task = Task.Create((unused) =>
+				Task task = Task.Factory.StartNew(() =>
 				{
 					// todo probably get rid of those tries and catches
 					try

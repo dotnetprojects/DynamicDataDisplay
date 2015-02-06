@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Research.DynamicDataDisplay.Maps.Servers.Network;
 using Microsoft.Research.DynamicDataDisplay.Charts.Maps;
 using System.Threading;
-using System.Threading.Collections;
 using System.Windows.Threading;
 using Microsoft.Research.DynamicDataDisplay.Charts.Shapes;
 using System.Diagnostics;
@@ -175,7 +175,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Maps.Charts.TiledRendering
 		void Hooks_DispatcherInactive(object sender, EventArgs e)
 		{
 			TileIndex id;
-			if (!isRendering[GetIndex()] && waitingIndexes.TryRemove(out id))
+			if (!isRendering[GetIndex()] && waitingIndexes.TryTake(out id))
 			{
 				RenderToBitmapCore(id);
 			}

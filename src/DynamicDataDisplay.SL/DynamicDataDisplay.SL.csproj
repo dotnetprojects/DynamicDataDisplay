@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73109F24-1A99-4B56-8EF8-5D7406F981D6}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Research.DynamicDataDisplaySilverLight</RootNamespace>
+    <AssemblyName>DynamicDataDisplaySilverLight</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChartPlotter.cs" />
+    <Compile Include="Charts\Axes\AxisBase.cs" />
+    <Compile Include="Charts\Axes\AxisControl.cs" />
+    <Compile Include="Charts\Axes\AxisGrid.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeAxis.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeAxisControl.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeLabelProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeLabelProviderBase.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeTicksProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeTicksProviderBase.cs" />
+    <Compile Include="Charts\Axes\DateTime\DateTimeToDoubleConversion.cs" />
+    <Compile Include="Charts\Axes\DateTime\DifferenceIn.cs" />
+    <Compile Include="Charts\Axes\DateTime\HorizontalDateTimeAxis.cs" />
+    <Compile Include="Charts\Axes\DateTime\MayorDateTimeLabelProvider.cs" />
+    <Compile Include="Charts\Axes\DateTime\MinorTimeProviderBase.cs" />
+    <Compile Include="Charts\Axes\DateTime\Strategies\DefaultDateTimeTicksStrategy.cs" />
+    <Compile Include="Charts\Axes\DateTime\Strategies\IDateTimeTicksStrategy.cs" />
+    <Compile Include="Charts\Axes\DateTime\TimePeriodTicksProvider.cs" />
+    <Compile Include="Charts\Axes\DefaultTicksProvider.cs" />
+    <Compile Include="Charts\Axes\IAxis.cs" />
+    <Compile Include="Charts\Axes\ILabelProvider.cs" />
+    <Compile Include="Charts\Axes\ITicksProvider.cs" />
+    <Compile Include="Charts\Axes\ITypedAxis.cs" />
+    <Compile Include="Charts\Axes\IValueConversion.cs" />
+    <Compile Include="Charts\Axes\LabelProviderBase.cs" />
+    <Compile Include="Charts\Axes\Numeric\ExponentialLabelProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\HorizontalAxis.cs" />
+    <Compile Include="Charts\Axes\Numeric\MinorNumericTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericAxis.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericAxisControl.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericLabelProviderBase.cs" />
+    <Compile Include="Charts\Axes\Numeric\NumericTicksProvider.cs" />
+    <Compile Include="Charts\Axes\Numeric\VerticalAxis.cs" />
+    <Compile Include="Charts\Axes\RoundHelper.cs" />
+    <Compile Include="Charts\Axes\StackCanvas.cs" />
+    <Compile Include="Charts\Enums.cs" />
+    <Compile Include="Charts\FakePointList.cs" />
+    <Compile Include="Charts\FilterCollection.cs" />
+    <Compile Include="Charts\Filters\FrequencyFilter.cs" />
+    <Compile Include="Charts\Filters\IPointsFilter.cs" />
+    <Compile Include="Charts\Filters\PointsFilterBase.cs" />
+    <Compile Include="Charts\IOneDimensionalChart.cs" />
+    <Compile Include="Charts\Legend.xaml.cs">
+      <DependentUpon>Legend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Charts\LineGraph.cs" />
+    <Compile Include="Charts\Navigation\buttonsNavigation.cs" />
+    <Compile Include="Charts\Navigation\MouseNavigation.cs" />
+    <Compile Include="Charts\Navigation\NavigationBase.cs" />
+    <Compile Include="Charts\PointGraphBase.cs" />
+    <Compile Include="Common\Auxiliary\ArrayExtensions.cs" />
+    <Compile Include="Common\Auxiliary\BoundsHelper.cs" />
+    <Compile Include="Common\Auxiliary\CoordinateUtils.cs" />
+    <Compile Include="Common\Auxiliary\DebugVerify.cs" />
+    <Compile Include="Common\Auxiliary\EventExtensions.cs" />
+    <Compile Include="Common\Auxiliary\MathHelper.cs" />
+    <Compile Include="Common\Auxiliary\PerformaceCounter.cs" />
+    <Compile Include="Common\Auxiliary\RectExtensions.cs" />
+    <Compile Include="Common\Auxiliary\SolidColorHelper.cs" />
+    <Compile Include="Common\Auxiliary\TransparentButton.xaml.cs">
+      <DependentUpon>TransparentButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Auxiliary\Verify.cs" />
+    <Compile Include="Common\D3Collection.cs" />
+    <Compile Include="Common\DataRect.cs" />
+    <Compile Include="Common\Ranges.cs" />
+    <Compile Include="Common\footer.cs" />
+    <Compile Include="Common\header.cs" />
+    <Compile Include="Common\RenderState.cs" />
+    <Compile Include="Common\ScrollWraper.xaml.cs">
+      <DependentUpon>ScrollWraper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Stubs\Extensions.cs" />
+    <Compile Include="Common\Stubs\Int32Rect.cs" />
+    <Compile Include="Converters\DefaultCoordinateConverter.cs" />
+    <Compile Include="Converters\ICoordinateConverter.cs" />
+    <Compile Include="CoordinateTransforms\ICoordinateTransform.cs" />
+    <Compile Include="DataSources\OneDimensional\CompositeDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\DataSourceHelper.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableDataSourceBase.cs" />
+    <Compile Include="DataSources\OneDimensional\DataSourceExtensions.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerablePointEnumerator.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableXDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\EnumerableYDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\IPointDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\IPointEnumerator.cs" />
+    <Compile Include="DataSources\OneDimensional\Mapping.cs" />
+    <Compile Include="DataSources\OneDimensional\RawDataSource.cs" />
+    <Compile Include="DataSources\OneDimensional\RawPointEnumerator.cs" />
+    <Compile Include="HorizontalAxisTitle.cs" />
+    <Compile Include="IViewport2D.cs" />
+    <Compile Include="Plotter.xaml.cs">
+      <DependentUpon>Plotter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plotter2D.cs" />
+    <Compile Include="Plotter2DExtensions.cs" />
+    <Compile Include="PlotterElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transforms\CoordinateTransform.cs" />
+    <Compile Include="Transforms\CoordinateTransformExtensions.cs" />
+    <Compile Include="Transforms\DataTransforms.cs" />
+    <Compile Include="VerticalAxisTitle.cs" />
+    <Compile Include="Viewport2D.cs" />
+    <Compile Include="ViewportElement2D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Charts\Legend.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\Auxiliary\TransparentButton.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\ScrollWraper.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Plotter.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicDataDisplay.Silverlight.Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicDataDisplay.Silverlight.License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

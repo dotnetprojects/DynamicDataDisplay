@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="D3SLSamplesBrowser.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    >
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" SelectionChanged="ListBox_SelectionChanged" Name="ProjectsList">
+            <TextBlock FontSize="16">Samples</TextBlock>
+            <ListBoxItem Name="LayoutTutorialItem" Content="XAML and Code Layout"/>
+            <ListBoxItem Name="DataSourcesTutorialItem" Content="Data Sources"/>
+            <ListBoxItem Name="LineGraphCustomiztionTutorialItem" Content="LineGraph Customiztion"/>
+            <ListBoxItem Name="LegendCustomiztionTutorialItem" Content="Legend and ButtonNavigation Customization"/>
+            <ListBoxItem Name="DateTimeAxisTutorialItem" Content="DateTimeAxis"/>
+            <TextBlock FontSize="16">Usage examples</TextBlock>
+            <ListBoxItem Name="AnimationSampleItem" Content="Animation"/>
+            <ListBoxItem Name="CurrencyExchangeSampleItem" Content="Currency Exchange"/>
+            <ListBoxItem Name="AlergologySampleItem" Content="Allergology"/>
+        </ListBox>
+        <Grid Grid.Column="1" Name="PreviewGrid"/>
+    </Grid>
+</UserControl>

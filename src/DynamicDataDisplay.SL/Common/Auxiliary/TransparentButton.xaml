@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Microsoft.Research.DynamicDataDisplay.Common.Auxiliary.TransparentButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    >
+    <Grid x:Name="LayoutRoot" Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Rectangle>
+            <Rectangle.Fill>
+                <SolidColorBrush Color="LightBlue"  Opacity="0.5"></SolidColorBrush>
+            </Rectangle.Fill>
+            <Rectangle.Stroke>
+                <SolidColorBrush Color="Black" Opacity="0.5"></SolidColorBrush>
+            </Rectangle.Stroke>
+        </Rectangle>
+        <TextBlock Name="TExtBlockMain" Text="tra ta ta" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.5"/>
+    </Grid>
+</UserControl>

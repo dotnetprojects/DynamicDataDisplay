@@ -19,7 +19,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Common.Auxiliary
 		{
 			return task.ContinueWith(t =>
 			{
-				var exception = t.Exception;
+				Exception exception = t.Exception;
 				if (exception != null)
 				{
 					if (exception.InnerException != null)
@@ -27,7 +27,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Common.Auxiliary
 
 					Debug.WriteLine("Failure in async task: " + exception.Message);
 				}
-			}, TaskContinuationKind.OnFailed);
+			}, TaskContinuationOptions.OnlyOnFaulted);
 		}
 
 		/// <summary>
@@ -44,7 +44,7 @@ namespace Microsoft.Research.DynamicDataDisplay.Common.Auxiliary
 				{
 					throw t.Exception;
 				}, DispatcherPriority.Send);
-			}, TaskContinuationKind.OnFailed);
+			}, TaskContinuationOptions.OnlyOnFaulted);
 		}
 	}
 }
